@@ -5,20 +5,18 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://myportfolio-xi-liart-28.vercel.app/'),
+  metadataBase: new URL('https://myportfolio-xi-liart-28.vercel.app'),
   title: 'Faizan Khan',
   description: 'Software Engineer & Data Scientist specializing in FinTech — Credit Risk Modeling, Fraud Detection, and Quantitative Finance.',
+  icons: {
+    icon: '/avatar.jpg',
+    apple: '/avatar.jpg',
+  },
   openGraph: {
     title: 'Faizan Khan',
-    description: 'Software Engineer & Data Scientist specializing in FinTech.',
-    url: 'https://myportfolio-xi-liart-28.vercel.app',
-    images: [{ 
-      url: '/avatar.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'Faizan Khan'
-    }],
-  },
+    description: 'Software Engineer & Data Scientist specializing in FinTech — Credit Risk Modeling, Fraud Detection, and Quantitative Finance.',
+    images: [{ url: '/avatar.jpg' }],
+  }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
