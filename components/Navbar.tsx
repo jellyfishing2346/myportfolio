@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
+
 const NAV_LINKS = [
   { label: 'About', href: '/#about' },
   { label: 'Experience', href: '/#experience' },
@@ -78,15 +79,26 @@ export default function Navbar() {
             />
           )}
           {phase === 'quote' && (
-            <p
-              className="text-slate-300 text-xl md:text-2xl italic font-light text-center max-w-lg leading-relaxed"
+            <div
+              className="absolute inset-0 flex items-center justify-center px-8"
               style={{ animation: 'quote-appear 0.6s ease forwards' }}
             >
-              &ldquo;{activePair.quote}&rdquo;
-              <span className="block text-slate-500 text-sm mt-4 not-italic tracking-widest uppercase">
-                Hannibal Lecter
-              </span>
-            </p>
+              <Image
+                src="/hannibal.jpg"
+                alt="Hannibal Lecter"
+                fill
+                className="object-cover opacity-20 grayscale"
+                priority
+              />
+              <div className="relative z-10 text-center max-w-lg">
+                <p className="text-slate-200 text-xl md:text-2xl italic font-light leading-relaxed drop-shadow-lg">
+                  &ldquo;{activePair.quote}&rdquo;
+                </p>
+                <span className="block text-slate-500 text-sm mt-4 not-italic tracking-widest uppercase">
+                  Hannibal Lecter
+                </span>
+              </div>
+            </div>
           )}
         </div>
       )}
