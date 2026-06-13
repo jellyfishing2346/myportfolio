@@ -3,13 +3,14 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-
+import { X, Menu } from 'lucide-react'
 
 const NAV_LINKS = [
   { label: 'About', href: '/#about' },
   { label: 'Experience', href: '/#experience' },
   { label: 'Projects', href: '/#projects' },
   { label: 'Skills', href: '/#skills' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Personal', href: '/personal' },
   { label: 'Contact', href: '/#contact' },
 ]
@@ -38,6 +39,7 @@ type Phase = 'idle' | 'fading' | 'quote'
 export default function Navbar() {
   const router = useRouter()
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [phase, setPhase] = useState<Phase>('idle')
   const [activePair, setActivePair] = useState(PAIRS[0])
 
@@ -47,8 +49,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
   const handleClick = (href: string, e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
+    setMenuOpen(false)
     const pair = PAIRS[Math.floor(Math.random() * PAIRS.length)]
     setActivePair(pair)
     setPhase('fading')
@@ -70,6 +78,7 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Hannibal transition overlay */}
       {phase !== 'idle' && (
         <div className="fixed inset-0 z-[200] bg-black flex items-center justify-center px-8">
           {phase === 'fading' && (
@@ -103,9 +112,34 @@ export default function Navbar() {
         </div>
       )}
 
+      {/* Mobile full-screen menu */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-[150] bg-[#0a0812]/95 backdrop-blur-xl flex flex-col px-8 pt-28 pb-12 md:hidden">
+          <nav className="flex flex-col gap-2 flex-1">
+            {NAV_LINKS.map(({ label, href }, i) => (
+              <a
+                key={href}
+                href={href}
+                onClick={(e) => handleClick(href, e)}
+                className="text-3xl font-bold text-slate-300 hover:text-violet-300 transition-colors py-3 border-b border-white/5"
+                style={{ animationDelay: `${i * 60}ms` }}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+          <a
+            href="/resume.pdf"
+            className="mt-6 text-center py-3 rounded-xl border border-violet-400/40 text-violet-300 hover:bg-violet-400/10 transition-all text-sm font-medium"
+          >
+            Resume ↓
+          </a>
+        </div>
+      )}
+
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'glass border-b border-white/10' : 'bg-transparent'
+          scrolled || menuOpen ? 'glass border-b border-white/10' : 'bg-transparent'
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -133,14 +167,14 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile nav */}
-          <div className="md:hidden flex gap-5">
-            {NAV_LINKS.map(({ label, href }) => (
-              <a key={href} href={href} onClick={(e) => handleClick(href, e)} className="text-xs text-slate-400 hover:text-white transition-colors">
-                {label}
-              </a>
-            ))}
-          </div>
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden text-slate-300 hover:text-white transition-colors p-1"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </nav>
     </>
