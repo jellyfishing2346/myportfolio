@@ -60,7 +60,7 @@ export default function Personal() {
               Beyond the Resume
             </h1>
             <p className="text-slate-400 text-sm max-w-lg mx-auto leading-relaxed">
-              The things I'm into outside of building software — what actually takes up my headspace
+              The things I'm into outside of building software, and what actually takes up my headspace
               when I'm not in front of a screen.
             </p>
           </div>
@@ -79,11 +79,11 @@ export default function Personal() {
               </div>
 
               <p className="text-slate-300 text-sm leading-relaxed mb-3">
-                I'm a horror film obsessive — specifically drawn to revenge narratives where the
+                I'm a horror film obsessive, specifically drawn to revenge narratives where the
                 power dynamic flips completely. The tension before the shift is what gets me.
               </p>
               <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                Carrie, Revenge, Even Lambs Have Teeth — stories about someone being underestimated
+                Carrie, Revenge, Even Lambs Have Teeth. Stories about someone being underestimated
                 and then becoming the threat tend to stay with me long after the credits. The Shining
                 is the gold standard for dread built through atmosphere rather than jump scares.
                 Scream earns its place for being self-aware enough to rewrite the rules while
@@ -169,16 +169,13 @@ export default function Personal() {
                   </h2>
                 </div>
                 <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                  {/* ← Update this with the sports you actually play or follow */}
-                  Playing and watching sports is how I decompress. There's something about the
-                  real-time strategy and unpredictability that I find genuinely absorbing —
-                  no two games play out the same way.
+                  I play soccer and football, nothing competitive, just pickup games where
+                  you actually have to think and move at the same time. It's the kind of
+                  physical reset that sitting at a desk all day doesn't give you.
                 </p>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  {/* ← Add specifics: which sports, what you play, what you follow */}
-                  Update this with the sports you actually play or follow — the more specific
-                  the better. "I play basketball" is fine. "I track my shot charts in pickup
-                  games" is better.
+                  Outside of team sports, I exercise regularly. It keeps me focused and I
+                  notice the difference on days I don't.
                 </p>
               </div>
 
@@ -193,7 +190,7 @@ export default function Personal() {
                   </h2>
                 </div>
                 <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                  I'm someone who genuinely values time with people — whether that's watching a
+                  I'm someone who genuinely values time with people, whether that's watching a
                   film together or just hanging out with nothing planned. The social side of life
                   matters as much to me as the technical side.
                 </p>

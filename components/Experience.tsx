@@ -8,7 +8,7 @@ const EDUCATION = [
     period: 'Expected May 2026',
     details: [
       'Relevant coursework: Data Structures, Analysis of Algorithms, Data Tools & Algorithms, Machine Learning',
-      'Minor in Data Science — bridging statistical modeling with production engineering',
+      'Minor in Data Science, bridging statistical modeling with production engineering',
     ],
   },
 ]
@@ -20,7 +20,7 @@ const EXPERIENCE = [
     location: 'Brooklyn, NY',
     period: 'Jun 2024 – May 2026',
     details: [
-      'Engineered a production ML pipeline for NERIS — a federal firefighter reporting system — using the Anthropic Claude API and fine-tuned models to extract structured data from unstructured narratives at scale',
+      'Engineered a production ML pipeline for NERIS (a federal firefighter reporting system) using the Anthropic Claude API and fine-tuned models to extract structured data from unstructured narratives at scale',
       'Built Python ETL pipelines with automated validation, schema enforcement, and anomaly detection, cutting manual processing time by 40% and reducing data quality incidents by ~30%',
     ],
   },
@@ -30,7 +30,7 @@ const EXPERIENCE = [
     location: 'Remote',
     period: 'Oct 2025 – Dec 2025',
     details: [
-      'Owned end-to-end delivery of a distributed microservices backend in Node.js/Express serving 5,000+ daily active users — led architecture decisions from system design through production monitoring',
+      'Owned end-to-end delivery of a distributed microservices backend in Node.js/Express serving 5,000+ daily active users, leading architecture decisions from system design through production monitoring',
       'Containerized multi-service applications with Docker and GCP achieving 99.9% uptime; mentored 4 engineers on API design and coding standards',
     ],
   },

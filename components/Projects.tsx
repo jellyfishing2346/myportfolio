@@ -37,7 +37,7 @@ const PROJECTS: Project[] = [
     borderHover: 'hover:border-violet-400/40',
     title: 'Quantitative Trading Framework',
     objective:
-      'I wanted to know if momentum and mean-reversion signals actually work when you test them honestly — real transaction costs, out-of-sample periods, no cherry-picking. This is that experiment.',
+      'I wanted to know if momentum and mean-reversion signals actually work when you test them honestly: real transaction costs, out-of-sample periods, no cherry-picking. This is that experiment.',
     metrics: [
       { label: 'Sharpe Ratio', value: '1.34' },
       { label: 'Backtest Span', value: '15 Years' },
@@ -58,7 +58,7 @@ const PROJECTS: Project[] = [
     borderHover: 'hover:border-blue-400/40',
     title: 'Credit Risk Scoring Engine',
     objective:
-      'I built this to understand how banks actually score loan applications. Raw loan data, XGBoost model, a deployed REST API, and SHAP explanations for why each decision was made — the whole stack, not just the model.',
+      'I built this to understand how banks actually score loan applications. Raw loan data, XGBoost model, a deployed REST API, and SHAP explanations for why each decision was made. The whole stack, not just the model.',
     metrics: [
       { label: 'ROC-AUC', value: '0.79' },
       { label: 'API Latency', value: '<120ms' },

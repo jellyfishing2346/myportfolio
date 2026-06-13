@@ -7,7 +7,7 @@ const ITEMS = [
     color: 'text-violet-400',
     borderColor: 'border-violet-400/20',
     bgColor: 'bg-violet-500/10',
-    value: 'Quantitative Trading Framework — backtesting momentum + mean reversion signals across 500+ S&P 500 tickers with walk-forward validation',
+    value: 'Quantitative Trading Framework: backtesting momentum + mean reversion signals across 500+ S&P 500 tickers with walk-forward validation',
   },
   {
     Icon: BookOpen,
@@ -15,7 +15,7 @@ const ITEMS = [
     color: 'text-blue-400',
     borderColor: 'border-blue-400/20',
     bgColor: 'bg-blue-500/10',
-    value: '"Advances in Financial Machine Learning" — Marcos López de Prado (specifically the chapter on backtesting pitfalls)',
+    value: '"Advances in Financial Machine Learning" by Marcos López de Prado (specifically the chapter on backtesting pitfalls)',
   },
   {
     Icon: Telescope,
@@ -23,7 +23,7 @@ const ITEMS = [
     color: 'text-emerald-400',
     borderColor: 'border-emerald-400/20',
     bgColor: 'bg-emerald-500/10',
-    value: 'How production ETL patterns from my research work translate to real-time market data pipelines — TimescaleDB vs. kdb+',
+    value: 'How production ETL patterns from my research work translate to real-time market data pipelines: TimescaleDB vs. kdb+',
   },
 ]
 

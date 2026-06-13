@@ -31,13 +31,13 @@ export default function About() {
             </p>
             <p className="text-slate-300 text-sm leading-relaxed mb-4">
               I ended up pointed at quantitative finance because it's one of the few places
-              where both sides matter equally — you need to understand the math well enough
+              where both sides matter equally. You need to understand the math well enough
               to trust your signals, and you need to engineer well enough that the system
               actually runs in production.
             </p>
             <p className="text-slate-300 text-sm leading-relaxed mb-6">
               I'm not trying to do everything. I want to work where the model and the system
-              both have to be right — and figure out the hard parts of that in an environment
+              both have to be right, and figure out the hard parts of that in an environment
               where it actually matters.
             </p>
             <div className="flex flex-wrap gap-2">
@@ -75,7 +75,7 @@ export default function About() {
               <p className="text-slate-300 text-sm leading-relaxed">
                 "Most quant researchers can't ship a production system. Most engineers don't
                 really understand what the model is doing. I'm trying to be the person who
-                does both — and so far that bet is paying off."
+                does both, and so far that bet is paying off."
               </p>
             </div>
           </div>
