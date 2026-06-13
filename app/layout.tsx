@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://myportfolio-xi-liart-28.vercel.app'),
+  metadataBase: new URL('https://myportfolio-xi-liart-28.vercel.app/'),
   title: 'Faizan Khan',
   description: 'Software Engineer & Data Scientist specializing in FinTech — Credit Risk Modeling, Fraud Detection, and Quantitative Finance.',
   openGraph: {
