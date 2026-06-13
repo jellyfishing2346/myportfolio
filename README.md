@@ -1,89 +1,114 @@
-# Faizan Khan — Portfolio
+<div align="center">
 
-Personal portfolio website for Faizan Khan, a software engineer transitioning into quantitative finance. Built to showcase FinTech engineering projects, professional experience, and a distinct personality — not just a resume in webpage form.
+# 🧠 Faizan Khan — Portfolio
 
-**Live:** [myportfolio-xi-liart-28.vercel.app](https://myportfolio-xi-liart-28.vercel.app)
+**Software Engineer → Quantitative Finance**
 
----
+*CS student at Brooklyn College finishing May 2026. Built this to show who I am, not just what I've done.*
 
-## Features
+[![Next.js](https://img.shields.io/badge/Next.js_14-black?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-### Core
-- Fully responsive with a custom mobile hamburger menu
-- Glassmorphism design system with a fixed deep-purple gradient background
-- Scroll-triggered card animations via IntersectionObserver
-- Open Graph and Twitter Card metadata with avatar image
+**[🌐 Live Site](https://myportfolio-xi-liart-28.vercel.app)** &nbsp;·&nbsp; **[📄 Resume](https://myportfolio-xi-liart-28.vercel.app/resume.pdf)** &nbsp;·&nbsp; **[💼 LinkedIn](https://linkedin.com/in/faizan-khan234)** &nbsp;·&nbsp; **[🐙 GitHub](https://github.com/jellyfishing2346)**
 
-### Pages
-- **Home** — Hero, About, Experience, Projects, Skills, Currently Reading, Contact
-- **Blog** — Writing section with individual post pages, tag filtering, read time
-- **Personal** — Horror film list with category filters and IMDb links, sports, social life
-- **404** — Custom Hannibal Lecter themed error page
-
-### Hannibal Transition
-Every nav link triggers a cinematic page transition: the screen fades to black, Hannibal Lecter's face appears dimly in the background, a real audio clip plays, and the matching quote fades in. Navigation fires the moment the audio ends. Four quote/audio pairs, randomly selected on each click.
+</div>
 
 ---
 
-## Tech Stack
+## ✨ What makes this different
 
-| Layer | Choice |
+Most portfolio sites are just resumes with a dark background. This one has a personality.
+
+Every nav link triggers a **cinematic Hannibal Lecter transition** — the screen fades to black, his face appears dimly behind the glass, a real audio clip plays, and the matching quote fades in. Navigation fires the moment the audio ends. Four quote/audio pairs, randomly selected each click.
+
+> *"I do wish we could chat longer, but I'm having an old friend for dinner."*
+
+Yeah. It's that kind of portfolio.
+
+---
+
+## 🗂️ Pages
+
+| Page | What's on it |
 |---|---|
-| Framework | Next.js 14 (App Router) |
-| Styling | Tailwind CSS v3 |
-| Language | TypeScript |
-| Icons | Lucide React |
-| Images | next/image |
-| Fonts | Inter (next/font/google) |
-| Deployment | Vercel |
+| `/` | Hero, About, Experience, Projects, Skills, Currently, Contact |
+| `/blog` | Writing on quant finance and ML engineering |
+| `/personal` | Horror films with category filters + IMDb links, sports, social |
+| `/404` | Custom Hannibal-themed error page because why not |
 
 ---
 
-## Project Structure
+## 🛠️ Tech Stack
+
+```
+Next.js 14 (App Router)    →  Framework
+TypeScript                  →  Language
+Tailwind CSS v3             →  Styling
+Lucide React                →  Icons
+next/image                  →  Optimized images
+next/font                   →  Inter typeface
+Vercel                      →  Deployment
+```
+
+---
+
+## 🎨 Design System
+
+The whole site runs on a single dark glassmorphism system.
+
+**Background** — fixed deep-purple gradient: `#0f0c29 → #302b63 → #24243e`
+
+**Core utilities:**
+```css
+.glass        /* frosted card: bg-white/6 + backdrop-blur-xl + subtle border */
+.glass-hover  /* lifts card + highlights border on hover                      */
+.gradient-text /* white → violet → indigo text gradient                       */
+```
+
+**Animations:** `fade-to-black`, `quote-appear`, `float`, `slideUp`, `fadeIn`
+
+---
+
+## 📁 Project Structure
 
 ```
 myportfolio/
 ├── app/
 │   ├── blog/
-│   │   ├── [slug]/
-│   │   │   └── page.tsx       # Individual blog post
-│   │   ├── data.ts            # All post content and metadata
-│   │   └── page.tsx           # Blog listing page
+│   │   ├── [slug]/page.tsx    ← individual post renderer
+│   │   ├── data.ts            ← all post content lives here
+│   │   └── page.tsx           ← listing page
 │   ├── personal/
-│   │   └── page.tsx           # Personal page (films, sports, social)
-│   ├── globals.css            # Glassmorphism utilities, animations
-│   ├── layout.tsx             # Root layout, metadata, OG config
-│   ├── not-found.tsx          # Custom 404 page
-│   └── page.tsx               # Home page (all main sections)
+│   │   └── page.tsx           ← films, sports, social
+│   ├── globals.css            ← design tokens + animations
+│   ├── layout.tsx             ← metadata, OG, fonts
+│   ├── not-found.tsx          ← custom 404
+│   └── page.tsx               ← home (all main sections)
 ├── components/
-│   ├── About.tsx
-│   ├── Contact.tsx
-│   ├── Currently.tsx
-│   ├── Experience.tsx
-│   ├── GithubIcon.tsx         # Custom SVG (replaces deprecated lucide Github)
+│   ├── Navbar.tsx             ← Hannibal transition lives here
 │   ├── Hero.tsx
-│   ├── Navbar.tsx             # Includes Hannibal transition logic
+│   ├── About.tsx
+│   ├── Experience.tsx
 │   ├── Projects.tsx
-│   └── Skills.tsx
+│   ├── Skills.tsx
+│   ├── Currently.tsx
+│   ├── Contact.tsx
+│   └── GithubIcon.tsx         ← custom SVG (lucide deprecated theirs)
 └── public/
     ├── avatar.jpg
-    ├── hannibal.jpg
+    ├── hannibal.jpg           ← yes, really
     ├── resume.pdf
-    ├── transition.mp3
-    ├── transition-2.mp3
-    ├── transition-3.mp3
-    └── transition-4.mp3
+    ├── transition.mp3         ← "I do wish we could chat longer..."
+    ├── transition-2.mp3       ← "You still wake up sometimes..."
+    ├── transition-3.mp3       ← "And you think if you save poor Catherine..."
+    └── transition-4.mp3       ← "What became of your lamb, Clarice?"
 ```
 
 ---
 
-## Getting Started
-
-### Prerequisites
-- Node.js 18+
-- npm
-
-### Installation
+## 🚀 Running Locally
 
 ```bash
 git clone https://github.com/jellyfishing2346/myportfolio.git
@@ -92,46 +117,43 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-### Build
+Open [http://localhost:3000](http://localhost:3000) and click a nav link with sound on.
 
 ```bash
-npm run build
-npm start
+# production build
+npm run build && npm start
 ```
 
 ---
 
-## Design System
+## ✍️ Adding a Blog Post
 
-### Colors
-- Background: `#0f0c29` → `#302b63` → `#24243e` (fixed gradient)
-- Accent: Violet (`#a78bfa`, `#818cf8`)
-- Text: `slate-300` / `slate-400` / `slate-500`
+Posts are structured data in `app/blog/data.ts`. Add an entry to the `POSTS` array:
 
-### Utilities
-- `.glass` — frosted glass card (`bg-white/6`, `backdrop-blur-xl`, subtle border)
-- `.glass-hover` — lift and border highlight on hover
-- `.gradient-text` — white to violet to indigo text gradient
+```ts
+{
+  slug: 'your-post-slug',
+  title: 'Your Post Title',
+  date: 'Jun 2026',
+  readTime: '4 min read',
+  summary: 'One sentence summary shown on the listing page.',
+  tag: 'Quant Finance',
+  tagClass: 'bg-violet-500/15 text-violet-300 border-violet-400/25',
+  blocks: [
+    { type: 'h2',      text: 'Section heading' },
+    { type: 'p',       text: 'Paragraph content.' },
+    { type: 'callout', text: 'Highlighted pullquote.' },
+  ],
+}
+```
 
-### Animations
-- `fade-to-black` — used in page transition overlay
-- `quote-appear` — Hannibal quote fade-in with upward drift
-- `float`, `float-delayed`, `float-slow` — Hero background orbs
-- `slideUp`, `fadeIn` — section entrance animations
+Routing and the listing page pick it up automatically. No CMS needed.
 
 ---
 
-## Blog
+## 📦 Deployment
 
-Posts are defined as structured data in `app/blog/data.ts`. Each post is a `Post` object with a `blocks` array of typed content nodes (`p`, `h2`, `callout`). To add a new post, append an entry to the `POSTS` array — routing and the listing page pick it up automatically.
-
----
-
-## Deployment
-
-Deployed on Vercel. Push to `main` triggers an automatic redeploy.
+Hosted on Vercel. Push to `main` triggers an automatic redeploy.
 
 ```bash
 git add .
@@ -141,6 +163,12 @@ git push origin main
 
 ---
 
-## License
+## 📜 License
 
 MIT — see [LICENSE](./LICENSE)
+
+<div align="center">
+
+*Built with Next.js, Tailwind, and an unhealthy appreciation for Hannibal Lecter.*
+
+</div>
