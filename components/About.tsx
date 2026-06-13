@@ -1,12 +1,12 @@
 const PROFILE = [
-  { label: 'Foundation', value: 'Software Engineering' },
-  { label: 'Specialization', value: 'Data Science & ML' },
-  { label: 'Target Domain', value: 'FinTech' },
-  { label: 'Focus Areas', value: 'Risk · Fraud · Quant' },
+  { label: 'Foundation', value: 'CS / Software Engineering' },
+  { label: 'Applied Skill', value: 'Machine Learning & ML Ops' },
+  { label: 'Target Domain', value: 'Quantitative Finance' },
+  { label: 'Edge', value: 'I build things that actually run' },
   { label: 'Status', value: 'Open to Opportunities' },
 ]
 
-const TAGS = ['Python', 'ML/AI', 'SQL', 'AWS', 'Docker', 'FastAPI', 'Kafka', 'React']
+const TAGS = ['Python', 'ML/AI', 'SQL', 'AWS', 'Docker', 'FastAPI', 'Kafka', 'Backtrader']
 
 export default function About() {
   return (
@@ -18,23 +18,26 @@ export default function About() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {/* Bio */}
+          {/* Narrative */}
           <div className="glass rounded-2xl p-8">
             <h3 className="text-sm font-semibold text-violet-300 uppercase tracking-wider mb-5">
-              The Transition Story
+              The Honest Version
             </h3>
             <p className="text-slate-300 text-sm leading-relaxed mb-4">
-              With a foundation in Software Engineering and Data Science, I'm directing my skills
-              toward the FinTech domain — where precision, scale, and real-world consequences
-              demand the best of both disciplines.
+              My background is software engineering — which means when I work on an ML problem,
+              I'm thinking about the API layer, the data pipeline, the monitoring strategy,
+              and the retraining loop. Not just the model accuracy in a notebook.
+            </p>
+            <p className="text-slate-300 text-sm leading-relaxed mb-4">
+              I'm moving toward quantitative finance because it's the domain that demands both:
+              you need to understand the math well enough to trust your signals, and you need
+              to engineer well enough that the system actually runs. Most people coming from
+              pure quant backgrounds can't do the second part.
             </p>
             <p className="text-slate-300 text-sm leading-relaxed mb-6">
-              My portfolio projects mirror production FinTech systems: deployed APIs, backtested
-              strategies, and streaming pipelines — not just notebooks. Each project is designed
-              to answer the question a hiring manager actually asks:{' '}
-              <em className="text-white not-italic font-medium">
-                "Can this person solve a real financial problem?"
-              </em>
+              I'm not trying to be a generalist. I'm building toward one specific thing —
+              ML engineering in systematic trading or quant research infrastructure —
+              where model quality and system quality both matter equally.
             </p>
             <div className="flex flex-wrap gap-2">
               {TAGS.map((tag) => (
@@ -48,12 +51,12 @@ export default function About() {
             </div>
           </div>
 
-          {/* Profile card */}
+          {/* Profile */}
           <div className="glass rounded-2xl p-8">
             <h3 className="text-sm font-semibold text-violet-300 uppercase tracking-wider mb-5">
               Profile
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-3 mb-8">
               {PROFILE.map(({ label, value }) => (
                 <div
                   key={label}
@@ -63,6 +66,16 @@ export default function About() {
                   <span className="text-white text-sm font-medium">{value}</span>
                 </div>
               ))}
+            </div>
+
+            {/* Point of view callout */}
+            <div className="rounded-xl bg-violet-500/10 border border-violet-400/20 p-4">
+              <p className="text-xs text-violet-400 uppercase tracking-wider mb-2 font-medium">Point of View</p>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                "Most quant researchers can't productionize their models. Most engineers
+                don't understand what the model is actually doing. I do both — and that's
+                the gap I'm here to fill."
+              </p>
             </div>
           </div>
         </div>

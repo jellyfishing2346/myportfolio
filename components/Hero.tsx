@@ -44,11 +44,11 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-slate-300 font-light mb-3">
-          Software Engineer <span className="text-violet-400 font-normal">×</span> Data Scientist
+          Software Engineer <span className="text-violet-400 font-normal">→</span> Quantitative Finance
         </p>
-        <p className="text-base md:text-lg text-slate-400 max-w-lg mx-auto mb-10 leading-relaxed">
-          Building production-grade ML systems for financial risk, fraud prevention,
-          and quantitative strategies.
+        <p className="text-base md:text-lg text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
+          I build ML systems that actually run in production — not just notebooks.
+          CS/SE background applied to quantitative trading, credit risk, and fraud detection.
         </p>
 
         {/* CTAs */}

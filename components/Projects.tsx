@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Github, ExternalLink, TrendingUp, Shield, BarChart3 } from 'lucide-react'
+import { ExternalLink, TrendingUp, Shield, BarChart3 } from 'lucide-react'
+import GithubIcon from '@/components/GithubIcon'
 
 interface Metric {
   label: string
@@ -22,11 +23,33 @@ interface Project {
   stack: string[]
   githubUrl: string
   demoUrl?: string
+  featured?: boolean
 }
 
 const PROJECTS: Project[] = [
   {
     id: 1,
+    badge: 'Quant Finance / Backtesting',
+    badgeClass: 'bg-violet-500/15 text-violet-300 border-violet-400/25',
+    Icon: BarChart3,
+    iconClass: 'text-violet-400',
+    accentLine: 'linear-gradient(90deg, #a78bfa 0%, transparent 100%)',
+    borderHover: 'hover:border-violet-400/40',
+    title: 'Quantitative Trading Framework',
+    objective:
+      'Multi-signal equity strategy backtested over 15 years of S&P 500 data with walk-forward validation, live market data ingestion, and an interactive Plotly Dash tearsheet.',
+    metrics: [
+      { label: 'Sharpe Ratio', value: '1.34' },
+      { label: 'Backtest Span', value: '15 Years' },
+      { label: 'Universe', value: '500+ Tickers' },
+    ],
+    stack: ['Backtrader', 'QuantStats', 'yfinance', 'Alpha Vantage API', 'SQLite', 'Plotly Dash'],
+    githubUrl: '#',
+    demoUrl: '#',
+    featured: true,
+  },
+  {
+    id: 2,
     badge: 'ML / Risk Analytics',
     badgeClass: 'bg-blue-500/15 text-blue-300 border-blue-400/25',
     Icon: TrendingUp,
@@ -45,7 +68,7 @@ const PROJECTS: Project[] = [
     githubUrl: '#',
   },
   {
-    id: 2,
+    id: 3,
     badge: 'Stream Processing / ML',
     badgeClass: 'bg-emerald-500/15 text-emerald-300 border-emerald-400/25',
     Icon: Shield,
@@ -63,30 +86,10 @@ const PROJECTS: Project[] = [
     stack: ['Kafka', 'Redis', 'XGBoost', 'Isolation Forest', 'FastAPI', 'Grafana', 'Docker'],
     githubUrl: '#',
   },
-  {
-    id: 3,
-    badge: 'Quant Finance / Backtesting',
-    badgeClass: 'bg-violet-500/15 text-violet-300 border-violet-400/25',
-    Icon: BarChart3,
-    iconClass: 'text-violet-400',
-    accentLine: 'linear-gradient(90deg, #a78bfa 0%, transparent 100%)',
-    borderHover: 'hover:border-violet-400/40',
-    title: 'Quantitative Trading Framework',
-    objective:
-      'Multi-signal equity strategy backtested over 15 years of S&P 500 data with walk-forward validation, live market data ingestion, and an interactive Plotly Dash tearsheet.',
-    metrics: [
-      { label: 'Sharpe Ratio', value: '1.34' },
-      { label: 'Backtest Span', value: '15 Years' },
-      { label: 'Universe', value: '500+ Tickers' },
-    ],
-    stack: ['Backtrader', 'QuantStats', 'yfinance', 'Alpha Vantage API', 'SQLite', 'Plotly Dash'],
-    githubUrl: '#',
-    demoUrl: '#',
-  },
 ]
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const { badge, badgeClass, Icon, iconClass, accentLine, borderHover, title, objective, metrics, stack, githubUrl, demoUrl } = project
+  const { badge, badgeClass, Icon, iconClass, accentLine, borderHover, title, objective, metrics, stack, githubUrl, demoUrl, featured } = project
   const [visible, setVisible] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -114,6 +117,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       <div className="p-7 flex flex-col flex-1">
         {/* Header row */}
+        {featured && (
+          <div className="mb-3 inline-flex items-center gap-1.5 text-xs text-violet-300 font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+            Primary Focus
+          </div>
+        )}
         <div className="flex items-start justify-between mb-4">
           <span className={`text-xs px-3 py-1 rounded-full border font-medium ${badgeClass}`}>
             {badge}
@@ -149,7 +158,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             href={githubUrl}
             className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs text-slate-300 border border-white/10 hover:border-white/25 hover:text-white transition-all duration-200"
           >
-            <Github size={13} /> Code
+            <GithubIcon size={13} /> Code
           </a>
           {demoUrl && (
             <a
