@@ -1,9 +1,9 @@
 const PROFILE = [
-  { label: 'Foundation', value: 'CS / Software Engineering' },
-  { label: 'Applied Skill', value: 'Machine Learning & ML Ops' },
-  { label: 'Target Domain', value: 'Quantitative Finance' },
-  { label: 'Edge', value: 'I build things that actually run' },
-  { label: 'Status', value: 'Open to Opportunities' },
+  { label: 'Background', value: 'CS / Software Engineering' },
+  { label: 'Building with', value: 'Machine Learning & ML Ops' },
+  { label: 'Going toward', value: 'Quantitative Finance' },
+  { label: 'Graduating', value: 'May 2026' },
+  { label: 'Looking for', value: 'Full-time roles' },
 ]
 
 const TAGS = ['Python', 'ML/AI', 'SQL', 'AWS', 'Docker', 'FastAPI', 'Kafka', 'Backtrader']
@@ -24,20 +24,21 @@ export default function About() {
               The Honest Version
             </h3>
             <p className="text-slate-300 text-sm leading-relaxed mb-4">
-              My background is software engineering — which means when I work on an ML problem,
-              I'm thinking about the API layer, the data pipeline, the monitoring strategy,
-              and the retraining loop. Not just the model accuracy in a notebook.
+              My background is software engineering. That means when I'm working on an ML
+              problem, I'm thinking about the pipeline, the API, what happens when the model
+              drifts, and how you actually retrain it. Not just getting the accuracy number up
+              in a notebook.
             </p>
             <p className="text-slate-300 text-sm leading-relaxed mb-4">
-              I'm moving toward quantitative finance because it's the domain that demands both:
-              you need to understand the math well enough to trust your signals, and you need
-              to engineer well enough that the system actually runs. Most people coming from
-              pure quant backgrounds can't do the second part.
+              I ended up pointed at quantitative finance because it's one of the few places
+              where both sides matter equally — you need to understand the math well enough
+              to trust your signals, and you need to engineer well enough that the system
+              actually runs in production.
             </p>
             <p className="text-slate-300 text-sm leading-relaxed mb-6">
-              I'm not trying to be a generalist. I'm building toward one specific thing —
-              ML engineering in systematic trading or quant research infrastructure —
-              where model quality and system quality both matter equally.
+              I'm not trying to do everything. I want to work where the model and the system
+              both have to be right — and figure out the hard parts of that in an environment
+              where it actually matters.
             </p>
             <div className="flex flex-wrap gap-2">
               {TAGS.map((tag) => (
@@ -72,9 +73,9 @@ export default function About() {
             <div className="rounded-xl bg-violet-500/10 border border-violet-400/20 p-4">
               <p className="text-xs text-violet-400 uppercase tracking-wider mb-2 font-medium">Point of View</p>
               <p className="text-slate-300 text-sm leading-relaxed">
-                "Most quant researchers can't productionize their models. Most engineers
-                don't understand what the model is actually doing. I do both — and that's
-                the gap I'm here to fill."
+                "Most quant researchers can't ship a production system. Most engineers don't
+                really understand what the model is doing. I'm trying to be the person who
+                does both — and so far that bet is paying off."
               </p>
             </div>
           </div>

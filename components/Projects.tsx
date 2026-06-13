@@ -37,7 +37,7 @@ const PROJECTS: Project[] = [
     borderHover: 'hover:border-violet-400/40',
     title: 'Quantitative Trading Framework',
     objective:
-      'Multi-signal equity strategy backtested over 15 years of S&P 500 data with walk-forward validation, live market data ingestion, and an interactive Plotly Dash tearsheet.',
+      'I wanted to know if momentum and mean-reversion signals actually work when you test them honestly — real transaction costs, out-of-sample periods, no cherry-picking. This is that experiment.',
     metrics: [
       { label: 'Sharpe Ratio', value: '1.34' },
       { label: 'Backtest Span', value: '15 Years' },
@@ -58,7 +58,7 @@ const PROJECTS: Project[] = [
     borderHover: 'hover:border-blue-400/40',
     title: 'Credit Risk Scoring Engine',
     objective:
-      'End-to-end ML pipeline predicting loan default probability, served via a production REST API — mirroring a real bank underwriting system with SHAP-based adverse-action explanations.',
+      'I built this to understand how banks actually score loan applications. Raw loan data, XGBoost model, a deployed REST API, and SHAP explanations for why each decision was made — the whole stack, not just the model.',
     metrics: [
       { label: 'ROC-AUC', value: '0.79' },
       { label: 'API Latency', value: '<120ms' },
@@ -77,7 +77,7 @@ const PROJECTS: Project[] = [
     borderHover: 'hover:border-emerald-400/40',
     title: 'Real-Time Fraud Detection',
     objective:
-      'Streaming payment fraud pipeline via Kafka + Redis + ensemble ML, tuned to minimize false positives — because a wrong decline costs as much as a missed fraud case.',
+      'The interesting constraint here: blocking a real customer costs almost as much as missing actual fraud. I built the system around that tradeoff rather than just chasing recall.',
     metrics: [
       { label: 'Precision', value: '94.2%' },
       { label: 'Throughput', value: '10K TPS' },
@@ -182,7 +182,7 @@ export default function Projects() {
           <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Portfolio</p>
           <h2 className="text-4xl font-bold text-white mb-3">FinTech Projects</h2>
           <p className="text-slate-400 text-sm max-w-md mx-auto">
-            Three production-minded systems spanning the core verticals of modern financial technology.
+            Three projects where I tried to build the real thing, not just the notebook version.
           </p>
         </div>
 

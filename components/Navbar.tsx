@@ -1,14 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'About', href: '/#about' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Skills', href: '/#skills' },
   { label: 'Personal', href: '/personal' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 export default function Navbar() {
@@ -27,8 +28,8 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="text-xl font-bold gradient-text tracking-tight">
-          FK
+        <a href="/" className="block w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+          <Image src="/hannibal.jpg" alt="Hannibal" width={40} height={40} className="w-full h-full object-cover" style={{ objectPosition: '50% 10%' }} />
         </a>
 
         {/* Desktop nav */}

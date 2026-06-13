@@ -47,8 +47,9 @@ export default function Hero() {
           Software Engineer <span className="text-violet-400 font-normal">→</span> Quantitative Finance
         </p>
         <p className="text-base md:text-lg text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
-          I build ML systems that actually run in production — not just notebooks.
-          CS/SE background applied to quantitative trading, credit risk, and fraud detection.
+          CS student at Brooklyn College, finishing up in May 2026. I got deep into
+          machine learning and ended up pointed at quantitative finance — where the
+          engineering has to be as rigorous as the math.
         </p>
 
         {/* CTAs */}

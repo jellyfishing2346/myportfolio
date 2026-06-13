@@ -26,8 +26,9 @@ export default function Contact() {
         <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Let's Connect</p>
         <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
         <p className="text-slate-400 text-sm max-w-md mx-auto mb-12 leading-relaxed">
-          Open to FinTech engineering and data science roles. Reach out to discuss opportunities,
-          collaborations, or just to talk financial systems.
+          I'm finishing my degree in May 2026 and actively looking for roles in FinTech and
+          quant finance. If something here resonates, drop me a message. Or if you just want
+          to talk horror films, that works too.
         </p>
 
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center mb-16">
