@@ -5,18 +5,18 @@ import Navbar from '@/components/Navbar'
 import { Film, Dumbbell, Users, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const FILMS = [
-  { title: 'The Shining',              year: '1980', tag: 'Psychological' },
-  { title: 'Carrie',                   year: '1976', tag: 'Revenge'       },
-  { title: 'Scream',                   year: '1996', tag: 'Meta Slasher'  },
-  { title: 'A Nightmare on Elm Street',year: '1984', tag: 'Classic'       },
-  { title: 'Green Inferno',            year: '2013', tag: 'Extreme'       },
-  { title: 'Revenge',                  year: '2017', tag: 'Revenge'       },
-  { title: 'Even Lambs Have Teeth',    year: '2015', tag: 'Revenge'       },
-  { title: 'Truth or Dare',            year: '2018', tag: 'Supernatural'  },
-  { title: 'Pretty Lethal',            year: '2023', tag: 'Thriller'      },
-  { title: 'Fear',                     year: '1996', tag: 'Psychological' },
-  { title: 'Happy Death Day',          year: '2017', tag: 'Time Loop'     },
-  { title: 'The First Purge',          year: '2018', tag: 'Social Horror' },
+  { title: 'The Shining',              year: '1980', tag: 'Psychological', url: 'https://www.imdb.com/title/tt0081505/' },
+  { title: 'Carrie',                   year: '1976', tag: 'Revenge',       url: 'https://www.imdb.com/title/tt0074285/' },
+  { title: 'Scream',                   year: '1996', tag: 'Meta Slasher',  url: 'https://www.imdb.com/title/tt0117571/' },
+  { title: 'A Nightmare on Elm Street',year: '1984', tag: 'Classic',       url: 'https://www.imdb.com/title/tt0087800/' },
+  { title: 'Green Inferno',            year: '2013', tag: 'Extreme',       url: 'https://www.imdb.com/title/tt2403021/' },
+  { title: 'Revenge',                  year: '2017', tag: 'Revenge',       url: 'https://www.imdb.com/title/tt6738136/' },
+  { title: 'Even Lambs Have Teeth',    year: '2015', tag: 'Revenge',       url: 'https://www.imdb.com/title/tt4147210/' },
+  { title: 'Truth or Dare',            year: '2018', tag: 'Supernatural',  url: 'https://www.imdb.com/title/tt6772950/' },
+  { title: 'Pretty Lethal',            year: '2023', tag: 'Thriller',      url: 'https://www.imdb.com/title/tt26678938/' },
+  { title: 'Fear',                     year: '1996', tag: 'Psychological', url: 'https://www.imdb.com/title/tt0116287/' },
+  { title: 'Happy Death Day',          year: '2017', tag: 'Time Loop',     url: 'https://www.imdb.com/title/tt5308322/' },
+  { title: 'The First Purge',          year: '2018', tag: 'Social Horror', url: 'https://www.imdb.com/title/tt6133466/' },
 ]
 
 const TAG_COLORS: Record<string, string> = {
@@ -115,19 +115,22 @@ export default function Personal() {
               {/* Carousel */}
               <div className="relative">
                 <div className="grid sm:grid-cols-2 gap-3 min-h-[112px]">
-                  {visible.map(({ title, year, tag }) => (
-                    <div
+                  {visible.map(({ title, year, tag, url }) => (
+                    <a
                       key={title}
-                      className="flex items-center justify-between p-3 rounded-xl bg-white/[0.04] border border-white/[0.06]"
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] hover:border-white/20 hover:bg-white/[0.07] transition-all duration-200 group"
                     >
                       <div>
-                        <p className="text-white text-sm font-medium">{title}</p>
+                        <p className="text-white text-sm font-medium group-hover:text-violet-300 transition-colors">{title}</p>
                         <p className="text-slate-500 text-xs">{year}</p>
                       </div>
                       <span className={`text-xs px-2.5 py-1 rounded-full border font-medium ${TAG_COLORS[tag]}`}>
                         {tag}
                       </span>
-                    </div>
+                    </a>
                   ))}
                 </div>
 
