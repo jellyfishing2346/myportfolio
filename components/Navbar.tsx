@@ -15,7 +15,7 @@ const NAV_LINKS = [
 
 const PAIRS = [
   {
-    quote: "I do wish we could chat longer, but I'm having an old friend for dinner.",
+    quote: "I do wish we could chat longer, but I'm having an old friend for dinner. Bye.",
     audio: '/transition.mp3',
   },
   {
