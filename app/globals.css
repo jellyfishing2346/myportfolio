@@ -54,6 +54,17 @@ body::before {
   background-clip: text;
 }
 
+/* Spooky page transition */
+@keyframes fade-to-black {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes quote-appear {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #0f0c29; }
