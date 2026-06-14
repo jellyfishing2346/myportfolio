@@ -65,7 +65,7 @@ const PROJECTS: Project[] = [
       { label: 'Records', value: '307K' },
     ],
     stack: ['XGBoost', 'SHAP', 'FastAPI', 'MLflow', 'PostgreSQL', 'Docker', 'AWS Lambda'],
-    githubUrl: '#',
+    githubUrl: 'https://github.com/jellyfishing2346/credit-risk',
   },
   {
     id: 3,
