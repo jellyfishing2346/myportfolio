@@ -35,17 +35,17 @@ const PROJECTS: Project[] = [
     iconClass: 'text-violet-400',
     accentLine: 'linear-gradient(90deg, #a78bfa 0%, transparent 100%)',
     borderHover: 'hover:border-violet-400/40',
-    title: 'Quantitative Finance',
+    title: 'Quantitative Trading Framework',
     objective:
       'I wanted to know if momentum and mean-reversion signals actually work when you test them honestly: real transaction costs, out-of-sample periods, no cherry-picking. This is that experiment.',
     metrics: [
-      { label: 'Sharpe Ratio', value: '1.34' },
-      { label: 'Backtest Span', value: '15 Years' },
-      { label: 'Universe', value: '500+ Tickers' },
+      { label: 'Sharpe Ratio', value: '0.74' },
+      { label: 'Backtest Span', value: '4 Years' },
+      { label: 'Universe', value: 'Any Ticker' },
     ],
     stack: ['Backtrader', 'QuantStats', 'yfinance', 'Alpha Vantage API', 'SQLite', 'Plotly Dash'],
     githubUrl: 'https://github.com/jellyfishing2346/quantitative-finance',
-    demoUrl: '#',
+    demoUrl: 'https://quantitative-finance.onrender.com/',
     featured: true,
   },
   {
