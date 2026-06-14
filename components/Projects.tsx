@@ -77,14 +77,15 @@ const PROJECTS: Project[] = [
     borderHover: 'hover:border-emerald-400/40',
     title: 'Real-Time Fraud Detection',
     objective:
-      'The interesting constraint here: blocking a real customer costs almost as much as missing actual fraud. I built the system around that tradeoff rather than just chasing recall.',
+      'Built solo over 8 weeks. Transactions stream through Kafka, features are cached in Redis for 2ms scoring, and XGBoost catches 89% of real fraud while flagging only 0.08% of legitimate transactions. That tradeoff was the whole design challenge.',
     metrics: [
-      { label: 'Precision', value: '94.2%' },
-      { label: 'Throughput', value: '10K TPS' },
-      { label: 'Score Latency', value: '<50ms' },
+      { label: 'ROC-AUC', value: '0.98' },
+      { label: 'Score Latency', value: '2ms' },
+      { label: 'Fraud Recall', value: '89%' },
     ],
-    stack: ['Kafka', 'Redis', 'XGBoost', 'Isolation Forest', 'FastAPI', 'Grafana', 'Docker'],
-    githubUrl: '#',
+    stack: ['Kafka', 'Redis', 'XGBoost', 'FastAPI', 'PostgreSQL', 'Docker', 'Python'],
+    githubUrl: 'https://github.com/jellyfishing2346/fraud-detection-engine.',
+    demoUrl: 'https://sparkling-brioche-94b5f2.netlify.app/dashboard.html',
   },
 ]
 
