@@ -60,12 +60,16 @@ const PROJECTS: Project[] = [
     objective:
       'I built this to understand how banks actually score loan applications. Raw loan data, XGBoost model, a deployed REST API, and SHAP explanations for why each decision was made. The whole stack, not just the model.',
     metrics: [
-      { label: 'ROC-AUC', value: '0.79' },
-      { label: 'API Latency', value: '<120ms' },
+      { label: 'ROC-AUC', value: '0.78' },      // got 0.7795, not 0.79
+      { label: 'API Latency', value: '<35ms' },   // measured 26-32ms warm
       { label: 'Records', value: '307K' },
     ],
-    stack: ['XGBoost', 'SHAP', 'FastAPI', 'MLflow', 'PostgreSQL', 'Docker', 'AWS Lambda'],
+    stack: ['XGBoost', 'SHAP', 'FastAPI', 'MLflow', 'Docker', 'Google Cloud Run', 'Streamlit'],
+    // removed PostgreSQL (schema built but not used at inference)
+    // replaced AWS Lambda with Google Cloud Run (what's actually running)
+    // added Streamlit (the dashboard)
     githubUrl: 'https://github.com/jellyfishing2346/credit-risk',
+    demoUrl: 'https://credit-risk-x3nbufkicqmtnxymgpneeq.streamlit.app/',
   },
   {
     id: 3,
