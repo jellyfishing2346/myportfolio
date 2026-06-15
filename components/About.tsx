@@ -24,10 +24,12 @@ export default function About() {
               The Honest Version
             </h3>
             <p className="text-slate-300 text-sm leading-relaxed mb-4">
-              My background is software engineering. That means when I'm working on an ML
-              problem, I'm thinking about the pipeline, the API, what happens when the model
-              drifts, and how you actually retrain it. Not just getting the accuracy number up
-              in a notebook.
+              I'm a software engineer who gets pulled toward hard problems, the kind where
+              the model, the system, and the data pipeline all have to work together. I
+              started in full-stack and drifted toward ML engineering. That means when I'm
+              working on a problem, I'm thinking about the pipeline, the API, what happens
+              when the model drifts, and how you actually retrain it. Not just getting the
+              accuracy number up in a notebook.
             </p>
             <p className="text-slate-300 text-sm leading-relaxed mb-4">
               I ended up pointed at quantitative finance because it's one of the few places

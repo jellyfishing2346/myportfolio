@@ -34,7 +34,7 @@ export default function Hero() {
         {/* Status badge */}
         <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-sm text-violet-300 mb-8">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          Open to FinTech Roles
+          Open to Engineering Roles
         </div>
 
         {/* Name */}
@@ -47,9 +47,9 @@ export default function Hero() {
           Software Engineer <span className="text-violet-400 font-normal">→</span> Quantitative Finance
         </p>
         <p className="text-base md:text-lg text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
-          CS student at Brooklyn College, finishing up in May 2026. I got deep into
-          machine learning and ended up pointed at quantitative finance, where the
-          engineering has to be as rigorous as the math.
+          Software engineer who gets pulled toward hard problems, where the model,
+          the system, and the data pipeline all have to work together. Started in
+          full-stack, drifted into ML engineering, currently pointed at quantitative finance.
         </p>
 
         {/* CTAs */}
