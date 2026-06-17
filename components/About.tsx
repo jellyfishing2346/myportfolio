@@ -38,9 +38,9 @@ export default function About() {
               actually runs in production.
             </p>
             <p className="text-slate-300 text-sm leading-relaxed mb-6">
-              I'm not trying to do everything. I want to work where the model and the system
-              both have to be right, and figure out the hard parts of that in an environment
-              where it actually matters.
+              I'm not trying to do everything. I want to find the problem where the math and
+              the engineering both have to be right, and spend a long time getting good at
+              that specific thing.
             </p>
             <div className="flex flex-wrap gap-2">
               {TAGS.map((tag) => (
@@ -76,8 +76,8 @@ export default function About() {
               <p className="text-xs text-violet-400 uppercase tracking-wider mb-2 font-medium">Point of View</p>
               <p className="text-slate-300 text-sm leading-relaxed">
                 "Most quant researchers can't ship a production system. Most engineers don't
-                really understand what the model is doing. I'm trying to be the person who
-                does both, and so far that bet is paying off."
+                really understand what the model is doing. I'm trying to close that gap.
+                The three projects on this site are where I'm testing whether I actually can."
               </p>
             </div>
           </div>

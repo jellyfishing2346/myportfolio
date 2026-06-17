@@ -8,7 +8,7 @@ const EDUCATION = [
     period: 'Expected May 2026',
     details: [
       'Relevant coursework: Data Structures, Analysis of Algorithms, Data Tools & Algorithms, Machine Learning',
-      'Minor in Data Science, bridging statistical modeling with production engineering',
+      'Minor in Data Science',
     ],
   },
 ]
@@ -30,7 +30,7 @@ const EXPERIENCE = [
     location: 'Remote',
     period: 'Oct 2025 – Dec 2025',
     details: [
-      'Owned end-to-end delivery of a distributed microservices backend in Node.js/Express serving 5,000+ daily active users, leading architecture decisions from system design through production monitoring',
+      'Built and shipped a distributed microservices backend in Node.js/Express serving 5,000+ daily active users, owning architecture decisions from design through production',
       'Containerized multi-service applications with Docker and GCP achieving 99.9% uptime; mentored 4 engineers on API design and coding standards',
     ],
   },
@@ -41,7 +41,7 @@ const EXPERIENCE = [
     period: 'Jul 2025 – Sep 2025',
     details: [
       'Drove a 25% increase in system throughput at a B2B data lake infrastructure company by standardizing RESTful API contracts across engineering teams',
-      'Identified and remediated 15+ critical security vulnerabilities (XSS, CSRF) through systematic OWASP-aligned production audits',
+      'Found and fixed 15+ security vulnerabilities (XSS, CSRF) through a production audit against the OWASP top 10',
     ],
   },
 ]
