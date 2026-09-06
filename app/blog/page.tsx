@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { ArrowUpRight } from 'lucide-react'
 import { POSTS } from './data'
@@ -26,7 +27,7 @@ export default function Blog() {
 
           <div className="space-y-4">
             {POSTS.map(({ slug, title, date, readTime, summary, tag, tagClass }) => (
-              <a
+              <Link
                 key={slug}
                 href={`/blog/${slug}`}
                 className="glass rounded-2xl p-7 flex flex-col sm:flex-row sm:items-start gap-4 hover:border-violet-400/30 transition-all duration-200 hover:-translate-y-1 group border border-white/10"
@@ -45,7 +46,7 @@ export default function Blog() {
                   <p className="text-slate-400 text-sm leading-relaxed">{summary}</p>
                 </div>
                 <ArrowUpRight size={16} className="text-slate-600 group-hover:text-violet-400 transition-colors flex-shrink-0 mt-1" />
-              </a>
+              </Link>
             ))}
           </div>
         </div>

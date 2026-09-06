@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Image from 'next/image'
 import { ArrowLeft } from 'lucide-react'
@@ -40,13 +41,13 @@ export default function NotFound() {
             </span>
           </blockquote>
 
-          <a
+          <Link
             href="/"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/30"
           >
             <ArrowLeft size={15} />
             Back to safety
-          </a>
+          </Link>
         </div>
       </div>
     </main>

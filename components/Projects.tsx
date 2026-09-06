@@ -1,95 +1,81 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
 import GithubIcon from '@/components/GithubIcon'
+import Reveal from '@/components/motion/Reveal'
 import { PROJECTS, type Project } from '@/app/projects/_data'
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const { slug, badge, badgeClass, Icon, iconClass, accentLine, borderHover, title, objective, metrics, stack, githubUrl, demoUrl, featured } = project
-  const [visible, setVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold: 0.1 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
 
   return (
-    <div
-      ref={ref}
-      className={`glass rounded-2xl overflow-hidden border border-white/10 ${borderHover} transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col`}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(32px)',
-        transition: `opacity 0.6s ease ${index * 120}ms, transform 0.6s ease ${index * 120}ms, box-shadow 0.3s ease, border-color 0.3s ease`,
-      }}
-    >
-      {/* Accent line */}
-      <div className="h-0.5 w-full flex-shrink-0" style={{ background: accentLine }} />
+    <Reveal delay={index * 0.15}>
+      <div
+        className={`glass rounded-2xl overflow-hidden border border-white/10 ${borderHover} transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col`}
+      >
+        {/* Accent line */}
+        <div className="h-0.5 w-full flex-shrink-0" style={{ background: accentLine }} />
 
-      <div className="p-7 flex flex-col flex-1">
-        {/* Card body — navigates to the case study */}
-        <a href={`/projects/${slug}`} className="flex flex-col flex-1">
-          {featured && (
-            <div className="mb-3 inline-flex items-center gap-1.5 text-xs text-violet-300 font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-              Primary Focus
-            </div>
-          )}
-          <div className="flex items-start justify-between mb-4">
-            <span className={`text-xs px-3 py-1 rounded-full border font-medium ${badgeClass}`}>
-              {badge}
-            </span>
-            <Icon size={18} className={iconClass} />
-          </div>
-
-          <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
-          <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-1">{objective}</p>
-
-          {/* Metrics */}
-          <div className="grid grid-cols-3 gap-2 mb-5">
-            {metrics.map(({ label, value }) => (
-              <div key={label} className="text-center p-3 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-                <div className="text-base font-bold text-white">{value}</div>
-                <div className="text-xs text-slate-500 mt-0.5">{label}</div>
+        <div className="p-7 flex flex-col flex-1">
+          {/* Card body — navigates to the case study */}
+          <Link href={`/projects/${slug}`} className="flex flex-col flex-1">
+            {featured && (
+              <div className="mb-3 inline-flex items-center gap-1.5 text-xs text-violet-300 font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+                Primary Focus
               </div>
-            ))}
-          </div>
-
-          {/* Stack pills */}
-          <div className="flex flex-wrap gap-1.5 mb-5">
-            {stack.map((tech) => (
-              <span key={tech} className="px-2 py-0.5 rounded text-xs bg-white/[0.05] text-slate-400 border border-white/[0.06]">
-                {tech}
+            )}
+            <div className="flex items-start justify-between mb-4">
+              <span className={`text-xs px-3 py-1 rounded-full border font-medium ${badgeClass}`}>
+                {badge}
               </span>
-            ))}
-          </div>
-        </a>
+              <Icon size={18} className={iconClass} />
+            </div>
 
-        {/* Actions — external links, kept outside the case-study link */}
-        <div className="flex gap-2 pt-1">
-          <a
-            href={githubUrl}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs text-slate-300 border border-white/10 hover:border-white/25 hover:text-white transition-all duration-200"
-          >
-            <GithubIcon size={13} /> Code
-          </a>
-          {demoUrl && (
+            <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-1">{objective}</p>
+
+            {/* Metrics */}
+            <div className="grid grid-cols-3 gap-2 mb-5">
+              {metrics.map(({ label, value }) => (
+                <div key={label} className="text-center p-3 rounded-xl bg-white/[0.04] border border-white/[0.06]">
+                  <div className="text-base font-bold text-white">{value}</div>
+                  <div className="text-xs text-slate-500 mt-0.5">{label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Stack pills */}
+            <div className="flex flex-wrap gap-1.5 mb-5">
+              {stack.map((tech) => (
+                <span key={tech} className="px-2 py-0.5 rounded text-xs bg-white/[0.05] text-slate-400 border border-white/[0.06]">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </Link>
+
+          {/* Actions — external links, kept outside the case-study link */}
+          <div className="flex gap-2 pt-1">
             <a
-              href={demoUrl}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs text-violet-300 border border-violet-400/30 hover:bg-violet-400/10 transition-all duration-200"
+              href={githubUrl}
+              className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs text-slate-300 border border-white/10 hover:border-white/25 hover:text-white transition-all duration-200"
             >
-              <ExternalLink size={13} /> Live Demo
+              <GithubIcon size={13} /> Code
             </a>
-          )}
+            {demoUrl && (
+              <a
+                href={demoUrl}
+                className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs text-violet-300 border border-violet-400/30 hover:bg-violet-400/10 transition-all duration-200"
+              >
+                <ExternalLink size={13} /> Live Demo
+              </a>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </Reveal>
   )
 }
 

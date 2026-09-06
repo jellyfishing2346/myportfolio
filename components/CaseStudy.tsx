@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import GithubIcon from '@/components/GithubIcon'
 import Navbar from '@/components/Navbar'
@@ -28,12 +29,12 @@ export default function CaseStudy({ project }: { project: Project }) {
         <div className="max-w-4xl mx-auto">
 
           {/* Back link */}
-          <a
+          <Link
             href="/"
             className="inline-flex items-center gap-2 text-slate-500 hover:text-violet-300 text-sm mb-10 transition-colors"
           >
             <ArrowLeft size={14} /> Back to home
-          </a>
+          </Link>
 
           {/* Header card — same visual language as ProjectCard */}
           <div className={`glass rounded-2xl overflow-hidden border border-white/10 ${borderHover} transition-all duration-300`}>

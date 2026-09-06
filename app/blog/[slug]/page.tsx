@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { ArrowLeft } from 'lucide-react'
 import { POSTS, getPost } from '../data'
@@ -25,12 +26,12 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         <div className="max-w-2xl mx-auto">
 
           {/* Back link */}
-          <a
+          <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-slate-500 hover:text-violet-300 text-sm mb-10 transition-colors"
           >
             <ArrowLeft size={14} /> All posts
-          </a>
+          </Link>
 
           {/* Header */}
           <div className="mb-12">
@@ -73,12 +74,12 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
           {/* Footer */}
           <div className="mt-16 pt-8 border-t border-white/5 flex items-center justify-between">
-            <a
+            <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-slate-500 hover:text-violet-300 text-sm transition-colors"
             >
               <ArrowLeft size={14} /> All posts
-            </a>
+            </Link>
             <span className="text-slate-600 text-xs">Faizan Khan</span>
           </div>
 
