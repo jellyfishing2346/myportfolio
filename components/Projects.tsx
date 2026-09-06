@@ -6,7 +6,7 @@ import GithubIcon from '@/components/GithubIcon'
 import { PROJECTS, type Project } from '@/app/projects/_data'
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const { badge, badgeClass, Icon, iconClass, accentLine, borderHover, title, objective, metrics, stack, githubUrl, demoUrl, featured } = project
+  const { slug, badge, badgeClass, Icon, iconClass, accentLine, borderHover, title, objective, metrics, stack, githubUrl, demoUrl, featured } = project
   const [visible, setVisible] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -33,43 +33,45 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       <div className="h-0.5 w-full flex-shrink-0" style={{ background: accentLine }} />
 
       <div className="p-7 flex flex-col flex-1">
-        {/* Header row */}
-        {featured && (
-          <div className="mb-3 inline-flex items-center gap-1.5 text-xs text-violet-300 font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-            Primary Focus
-          </div>
-        )}
-        <div className="flex items-start justify-between mb-4">
-          <span className={`text-xs px-3 py-1 rounded-full border font-medium ${badgeClass}`}>
-            {badge}
-          </span>
-          <Icon size={18} className={iconClass} />
-        </div>
-
-        <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
-        <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-1">{objective}</p>
-
-        {/* Metrics */}
-        <div className="grid grid-cols-3 gap-2 mb-5">
-          {metrics.map(({ label, value }) => (
-            <div key={label} className="text-center p-3 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-              <div className="text-base font-bold text-white">{value}</div>
-              <div className="text-xs text-slate-500 mt-0.5">{label}</div>
+        {/* Card body — navigates to the case study */}
+        <a href={`/projects/${slug}`} className="flex flex-col flex-1">
+          {featured && (
+            <div className="mb-3 inline-flex items-center gap-1.5 text-xs text-violet-300 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+              Primary Focus
             </div>
-          ))}
-        </div>
-
-        {/* Stack pills */}
-        <div className="flex flex-wrap gap-1.5 mb-5">
-          {stack.map((tech) => (
-            <span key={tech} className="px-2 py-0.5 rounded text-xs bg-white/[0.05] text-slate-400 border border-white/[0.06]">
-              {tech}
+          )}
+          <div className="flex items-start justify-between mb-4">
+            <span className={`text-xs px-3 py-1 rounded-full border font-medium ${badgeClass}`}>
+              {badge}
             </span>
-          ))}
-        </div>
+            <Icon size={18} className={iconClass} />
+          </div>
 
-        {/* Actions */}
+          <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
+          <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-1">{objective}</p>
+
+          {/* Metrics */}
+          <div className="grid grid-cols-3 gap-2 mb-5">
+            {metrics.map(({ label, value }) => (
+              <div key={label} className="text-center p-3 rounded-xl bg-white/[0.04] border border-white/[0.06]">
+                <div className="text-base font-bold text-white">{value}</div>
+                <div className="text-xs text-slate-500 mt-0.5">{label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Stack pills */}
+          <div className="flex flex-wrap gap-1.5 mb-5">
+            {stack.map((tech) => (
+              <span key={tech} className="px-2 py-0.5 rounded text-xs bg-white/[0.05] text-slate-400 border border-white/[0.06]">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </a>
+
+        {/* Actions — external links, kept outside the case-study link */}
         <div className="flex gap-2 pt-1">
           <a
             href={githubUrl}
