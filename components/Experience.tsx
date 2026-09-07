@@ -1,11 +1,11 @@
-import { GraduationCap, Briefcase, Users } from 'lucide-react'
+import { Briefcase, Users } from 'lucide-react'
 
 const EDUCATION = [
   {
     degree: 'B.S. Computer Science, Minor in Data Science',
     school: 'CUNY Brooklyn College',
     location: 'Brooklyn, NY',
-    period: 'Expected May 2026',
+    period: 'Current',
     details: [
       'Relevant coursework: Data Structures, Analysis of Algorithms, Data Tools & Algorithms, Machine Learning',
       'Minor in Data Science',
@@ -18,7 +18,7 @@ const EXPERIENCE = [
     role: 'Research Assistant',
     company: 'Brooklyn College',
     location: 'Brooklyn, NY',
-    period: 'Jun 2024 – May 2026',
+    period: 'Current',
     details: [
       'Engineered a production ML pipeline for NERIS (a federal firefighter reporting system) using the Anthropic Claude API and fine-tuned models to extract structured data from unstructured narratives at scale',
       'Built Python ETL pipelines with automated validation, schema enforcement, and anomaly detection, cutting manual processing time by 40% and reducing data quality incidents by ~30%',
@@ -59,41 +59,41 @@ const EXPERIENCE = [
 const LEADERSHIP = {
   role: 'Student Treasurer',
   org: 'Brooklyn College Computer Science Club',
-  period: 'Jun 2023 – May 2026',
+  period: 'Current',
   detail: 'Scaled active membership to 100+ students; coordinated technical workshops on AI engineering, full-stack development, and systems design.',
 }
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6">
+    <>
+      <section id="experience" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
-          <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Background</p>
-          <h2 className="text-4xl font-bold text-white">Education & Experience</h2>
+          <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Applied work</p>
+          <h2 className="text-4xl font-bold text-white">Experience</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          {/* Education */}
-          <div className="glass rounded-2xl p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-400/20 flex items-center justify-center">
-                <GraduationCap size={15} className="text-blue-400" />
-              </div>
-              <h3 className="text-sm font-semibold text-blue-300 uppercase tracking-wider">Education</h3>
+        <div className="glass rounded-2xl p-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center">
+              <Briefcase size={15} className="text-violet-400" />
             </div>
+            <h3 className="text-sm font-semibold text-violet-300 uppercase tracking-wider">Professional and academic roles</h3>
+          </div>
 
-            {EDUCATION.map(({ degree, school, location, period, details }) => (
-              <div key={school}>
-                <div className="flex items-start justify-between mb-1">
-                  <span className="text-white font-semibold text-sm leading-snug pr-4">{degree}</span>
-                  <span className="text-slate-500 text-xs flex-shrink-0">{period}</span>
+          <div className="grid md:grid-cols-2 gap-6">
+            {EXPERIENCE.map(({ role, company, location, period, details }) => (
+              <div key={`${role}-${company}`} className="pb-6 border-b border-white/5 last:border-0 last:pb-0">
+                <div className="flex items-start justify-between mb-0.5">
+                  <span className="text-white font-semibold text-sm">{role}</span>
+                  <span className="text-slate-500 text-xs ml-3 flex-shrink-0">{period}</span>
                 </div>
-                <p className="text-violet-300 text-sm mb-1">{school}</p>
-                <p className="text-slate-500 text-xs mb-4">{location}</p>
-                <ul className="space-y-2">
+                <p className="text-violet-300 text-sm mb-0.5">{company}</p>
+                <p className="text-slate-500 text-xs mb-3">{location}</p>
+                <ul className="space-y-1.5">
                   {details.map((d) => (
                     <li key={d} className="flex items-start gap-2 text-sm text-slate-400">
-                      <span className="w-1 h-1 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
+                      <span className="w-1 h-1 rounded-full bg-violet-400 mt-2 flex-shrink-0" />
                       {d}
                     </li>
                   ))}
@@ -101,40 +101,8 @@ export default function Experience() {
               </div>
             ))}
           </div>
-
-          {/* Work Experience */}
-          <div className="glass rounded-2xl p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center">
-                <Briefcase size={15} className="text-violet-400" />
-              </div>
-              <h3 className="text-sm font-semibold text-violet-300 uppercase tracking-wider">Experience</h3>
-            </div>
-
-            <div className="space-y-6">
-              {EXPERIENCE.map(({ role, company, location, period, details }) => (
-                <div key={`${role}-${company}`} className="pb-6 border-b border-white/5 last:border-0 last:pb-0">
-                  <div className="flex items-start justify-between mb-0.5">
-                    <span className="text-white font-semibold text-sm">{role}</span>
-                    <span className="text-slate-500 text-xs ml-3 flex-shrink-0">{period}</span>
-                  </div>
-                  <p className="text-violet-300 text-sm mb-0.5">{company}</p>
-                  <p className="text-slate-500 text-xs mb-3">{location}</p>
-                  <ul className="space-y-1.5">
-                    {details.map((d) => (
-                      <li key={d} className="flex items-start gap-2 text-sm text-slate-400">
-                        <span className="w-1 h-1 rounded-full bg-violet-400 mt-2 flex-shrink-0" />
-                        {d}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
-        {/* Leadership */}
         <div className="glass rounded-2xl px-8 py-5 flex flex-col sm:flex-row sm:items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-400/20 flex items-center justify-center flex-shrink-0">
             <Users size={15} className="text-emerald-400" />
@@ -149,6 +117,37 @@ export default function Experience() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+
+      <section id="education" className="py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-xs text-blue-400 uppercase tracking-widest mb-3 font-medium">Academic foundation</p>
+            <h2 className="text-4xl font-bold text-white">Education</h2>
+          </div>
+
+          <div className="glass rounded-2xl p-8">
+            {EDUCATION.map(({ degree, school, location, period, details }) => (
+              <div key={school}>
+                <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
+                  <span className="text-white font-semibold text-sm leading-snug pr-4">{degree}</span>
+                  <span className="text-slate-500 text-xs">{period}</span>
+                </div>
+                <p className="text-violet-300 text-sm mb-1">{school}</p>
+                <p className="text-slate-500 text-xs mb-4">{location}</p>
+                <ul className="grid md:grid-cols-2 gap-2">
+                  {details.map((d) => (
+                    <li key={d} className="flex items-start gap-2 text-sm text-slate-400">
+                      <span className="w-1 h-1 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
