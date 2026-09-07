@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="flex flex-wrap gap-3 justify-center mb-14">
           <a
             href="#projects"
-            className="px-7 py-3 rounded-lg bg-[#10221f] hover:bg-[#087f73] text-white text-sm font-medium transition-all duration-200"
+            className="px-7 py-3 rounded-lg bg-[#10221f] hover:bg-[#087f73] text-[#f3f0e8] text-sm font-medium transition-all duration-200"
           >
             View technical work
           </a>
