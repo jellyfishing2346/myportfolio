@@ -64,7 +64,7 @@ const LEADERSHIP = {
   details: ['Scaled active membership to 100+ students and coordinated workshops on AI engineering, full-stack development, and systems design.'],
 }
 
-const ACTIVITIES = ['Project Alpaca', 'Brooklyn College Computer Science Club', 'CUNY Tech Prep']
+const ACTIVITIES = ['Project Alpaca', 'Brooklyn College Computer Science Club', 'CUNY Tech Prep', 'CodePath.org']
 
 export default function Experience() {
   return (

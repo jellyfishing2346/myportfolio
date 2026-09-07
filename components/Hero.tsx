@@ -26,14 +26,14 @@ export default function Hero() {
       >
         <div className="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#087f73]">
           <span className="h-px w-10 bg-[#087f73]" />
-          Software engineering student · TA · RA
+          CS student · TA · RA
         </div>
 
         <h1 className="max-w-4xl text-5xl sm:text-6xl md:text-8xl font-semibold tracking-tight leading-[0.98] mb-7 text-[#10221f]">
           Software systems for financial data and <span className="gradient-text">intelligent decisions.</span>
         </h1>
         <p className="text-lg md:text-xl text-[#52615e] max-w-2xl mb-10 leading-relaxed">
-          I build backend services, real-time data pipelines, and explainable ML systems for fraud detection, credit risk, and quantitative finance.
+          I turn high-stakes financial data into reliable software: streaming fraud detection, explainable credit-risk APIs, and research systems tested against real-world constraints.
         </p>
 
         <div className="flex flex-wrap gap-3 justify-center mb-14">
