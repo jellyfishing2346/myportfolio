@@ -64,6 +64,8 @@ const LEADERSHIP = {
   details: ['Scaled active membership to 100+ students and coordinated workshops on AI engineering, full-stack development, and systems design.'],
 }
 
+const ACTIVITIES = ['Project Alpaca', 'Brooklyn College Computer Science Club', 'CUNY Tech Prep']
+
 export default function Experience() {
   return (
     <>
@@ -86,13 +88,32 @@ export default function Experience() {
               <p className="mt-0.5 text-xs text-slate-500">{location}</p>
               <ul className="mt-3 space-y-1.5">
                 {details.map((detail) => (
-                  <li key={detail} className="max-w-3xl text-sm leading-relaxed text-slate-400">{detail}</li>
+                  <li key={detail} className="flex max-w-3xl items-start gap-2 text-sm leading-relaxed text-slate-400">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#087f73]" />
+                    <span>{detail}</span>
+                  </li>
                 ))}
               </ul>
             </article>
           ))}
         </div>
       </div>
+      </section>
+
+      <section id="activities" className="px-6 pb-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="border-t border-[#10221f]/10 pt-8">
+            <p className="mb-4 text-xs font-medium uppercase tracking-widest text-violet-400">Activities</p>
+            <ul className="space-y-3">
+              {ACTIVITIES.map((activity) => (
+                <li key={activity} className="flex items-center gap-2 text-sm text-slate-400">
+                  <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#d8624d]" />
+                  {activity}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section id="education" className="py-16 px-6">
@@ -117,7 +138,7 @@ export default function Experience() {
                 </div>
                 <p className="text-violet-300 text-sm mb-1">{school}</p>
                 <p className="text-slate-500 text-xs mb-4">{location}</p>
-                <ul className="grid md:grid-cols-2 gap-2">
+                <ul className="space-y-2">
                   {details.map((d) => (
                     <li key={d} className="flex items-start gap-2 text-sm text-slate-400">
                       <span className="w-1 h-1 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
