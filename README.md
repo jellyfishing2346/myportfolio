@@ -2,9 +2,9 @@
 
 # 🧠 Faizan Khan — Portfolio
 
-**Software Engineer → Quantitative Finance**
+**Software Engineering · FinTech Systems · AI/ML Infrastructure**
 
-*CS student at Brooklyn College finishing May 2026. Built this to show who I am, not just what I've done.*
+*Computer science student, teaching assistant, and research assistant building backend systems, real-time data pipelines, and explainable ML applications.*
 
 [![Next.js](https://img.shields.io/badge/Next.js_14-black?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -17,15 +17,11 @@
 
 ---
 
-## ✨ What makes this different
+## ✨ What this portfolio shows
 
-Most portfolio sites are just resumes with a dark background. This one has a personality.
+This portfolio presents software engineering work across financial data, machine learning, backend services, and event-driven systems. Projects are described with transparent benchmark framing rather than production guarantees.
 
-Every nav link triggers a **cinematic Hannibal Lecter transition** — the screen fades to black, his face appears dimly behind the glass, a real audio clip plays, and the matching quote fades in. Navigation fires the moment the audio ends. Four quote/audio pairs, randomly selected each click.
-
-> *"I do wish we could chat longer, but I'm having an old friend for dinner."*
-
-Yeah. It's that kind of portfolio.
+Featured work includes real-time fraud scoring, explainable credit-risk prediction, and quantitative trading research with walk-forward validation and transaction-cost modeling.
 
 ---
 
@@ -33,10 +29,10 @@ Yeah. It's that kind of portfolio.
 
 | Page | What's on it |
 |---|---|
-| `/` | Hero, About, Experience, Projects, Skills, Currently, Contact |
+| `/` | Hero, capabilities, projects, experience, education, activities, About, Currently, Contact |
 | `/blog` | Writing on quant finance and ML engineering |
 | `/personal` | Horror films with category filters + IMDb links, sports, social |
-| `/404` | Custom Hannibal-themed error page because why not |
+| `/404` | Custom not-found page |
 
 ---
 
@@ -56,18 +52,18 @@ Vercel                      →  Deployment
 
 ## 🎨 Design System
 
-The whole site runs on a single dark glassmorphism system.
+The site uses a light editorial engineering style with a warm paper palette, teal accents, a drafting-grid texture, and restrained glass panels for grouped content.
 
-**Background** — fixed deep-purple gradient: `#0f0c29 → #302b63 → #24243e`
+**Background** — warm paper gradient with a subtle technical grid
 
 **Core utilities:**
 ```css
-.glass        /* frosted card: bg-white/6 + backdrop-blur-xl + subtle border */
-.glass-hover  /* lifts card + highlights border on hover                      */
-.gradient-text /* white → violet → indigo text gradient                       */
+.glass        /* translucent panel with restrained border and shadow */
+.glass-hover  /* lifts panel and highlights the border on hover       */
+.gradient-text /* ink → teal → coral text treatment                    */
 ```
 
-**Animations:** `fade-to-black`, `quote-appear`, `float`, `slideUp`, `fadeIn`
+**Animations:** reveal-on-scroll, page transitions, and subtle entrance motion
 
 ---
 
@@ -87,7 +83,7 @@ myportfolio/
 │   ├── not-found.tsx          ← custom 404
 │   └── page.tsx               ← home (all main sections)
 ├── components/
-│   ├── Navbar.tsx             ← Hannibal transition lives here
+│   ├── Navbar.tsx             ← four-link responsive navigation
 │   ├── Hero.tsx
 │   ├── About.tsx
 │   ├── Experience.tsx
@@ -95,10 +91,11 @@ myportfolio/
 │   ├── Skills.tsx
 │   ├── Currently.tsx
 │   ├── Contact.tsx
-│   └── GithubIcon.tsx         ← custom SVG (lucide deprecated theirs)
+│   └── GithubIcon.tsx         ← GitHub mark
 └── public/
     ├── avatar.jpg
-    ├── hannibal.jpg           ← yes, really
+    ├── brand-mark.png
+    └── hannibal.jpg
 ```
 
 ---
@@ -112,7 +109,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) and click a nav link with sound on.
+Open [http://localhost:3000](http://localhost:3000). The homepage is organized around capabilities, project evidence, experience, education, activities, and contact.
 
 ```bash
 # production build
@@ -164,6 +161,6 @@ MIT — see [LICENSE](./LICENSE)
 
 <div align="center">
 
-*Built with Next.js, Tailwind, and an unhealthy appreciation for Hannibal Lecter.*
+*Built with Next.js, Tailwind, and a focus on making technical work easy to evaluate.*
 
 </div>
