@@ -13,10 +13,10 @@ export default function Home() {
     <main className="relative z-10">
       <Navbar />
       <Hero />
-      <Reveal><About /></Reveal>
-      <Reveal><Experience /></Reveal>
-      <Reveal><Projects /></Reveal>
       <Reveal><Skills /></Reveal>
+      <Reveal><Projects /></Reveal>
+      <Reveal><Experience /></Reveal>
+      <Reveal><About /></Reveal>
       <Reveal><Currently /></Reveal>
       <Reveal><Contact /></Reveal>
     </main>

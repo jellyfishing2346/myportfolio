@@ -6,33 +6,43 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --ink: #10221f;
+  --muted: #52615e;
+  --paper: #f3f0e8;
+  --paper-deep: #e8e4d9;
+  --line: rgba(16, 34, 31, 0.14);
+  --teal: #087f73;
+  --coral: #d8624d;
+}
+
 body {
-  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(216, 98, 77, 0.16), transparent 28rem),
+    linear-gradient(135deg, var(--paper) 0%, #f7f5ef 48%, var(--paper-deep) 100%);
   background-attachment: fixed;
   min-height: 100vh;
-  color: white;
+  color: var(--ink);
   overflow-x: hidden;
 }
 
-/* Subtle terminal grid overlay */
+/* A quiet drafting-grid texture keeps the technical tone without competing with the content. */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(167, 139, 250, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(167, 139, 250, 0.025) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(16, 34, 31, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 34, 31, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
   pointer-events: none;
   z-index: 0;
 }
 
-/* Glass utility */
 .glass {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 45px rgba(16, 34, 31, 0.06);
 }
 
 .glass-hover {
@@ -40,19 +50,29 @@ body::before {
 }
 
 .glass-hover:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(167, 139, 250, 0.35);
-  box-shadow: 0 8px 32px rgba(167, 139, 250, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(8, 127, 115, 0.4);
+  box-shadow: 0 12px 28px rgba(16, 34, 31, 0.1);
   transform: translateY(-3px);
 }
 
-/* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 40%, #818cf8 100%);
+  background: linear-gradient(135deg, var(--ink) 0%, var(--teal) 65%, var(--coral) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Existing section components share these utility names; keep their content readable while the palette transitions. */
+.text-white { color: var(--ink) !important; }
+.text-slate-200, .text-slate-300, .text-slate-400 { color: var(--muted) !important; }
+.text-slate-500, .text-slate-600 { color: #71807b !important; }
+.text-violet-300, .text-violet-400 { color: var(--teal) !important; }
+.text-blue-300, .text-blue-400 { color: #2775a8 !important; }
+.text-emerald-300, .text-emerald-400 { color: #087f73 !important; }
+.border-white\/5, .border-white\/10, .border-white\/\[0\.06\] { border-color: var(--line) !important; }
+.bg-white\/\[0\.04\], .bg-white\/\[0\.05\] { background: rgba(16, 34, 31, 0.045) !important; }
+.bg-violet-500\/10, .bg-violet-500\/15 { background: rgba(8, 127, 115, 0.08) !important; }
 
 /* Spooky page transition */
 @keyframes fade-to-black {
@@ -65,8 +85,7 @@ body::before {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #0f0c29; }
-::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.35); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(167, 139, 250, 0.6); }
+::-webkit-scrollbar-track { background: var(--paper-deep); }
+::-webkit-scrollbar-thumb { background: rgba(8, 127, 115, 0.45); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--teal); }

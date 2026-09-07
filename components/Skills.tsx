@@ -66,8 +66,8 @@ export default function Skills() {
     <section id="skills" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Capabilities</p>
-          <h2 className="text-4xl font-bold text-white">Technical Skills</h2>
+          <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Systems map</p>
+          <h2 className="text-4xl font-bold text-white">Capabilities across the stack</h2>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

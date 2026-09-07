@@ -84,10 +84,10 @@ export default function Projects() {
     <section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Portfolio</p>
-          <h2 className="text-4xl font-bold text-white mb-3">FinTech Projects</h2>
+          <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Selected systems</p>
+          <h2 className="text-4xl font-bold text-white mb-3">Work built around real constraints</h2>
           <p className="text-slate-400 text-sm max-w-md mx-auto">
-            Three projects where I tried to build the real thing, not just the notebook version.
+            Case studies in streaming data, explainable risk models, and disciplined financial research.
           </p>
         </div>
 

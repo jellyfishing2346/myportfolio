@@ -11,7 +11,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-**[🌐 Live Site](https://myportfolio-xi-liart-28.vercel.app)** &nbsp;·&nbsp; **[📄 Resume](https://myportfolio-xi-liart-28.vercel.app/resume.pdf)** &nbsp;·&nbsp; **[💼 LinkedIn](https://linkedin.com/in/faizan-khan234)** &nbsp;·&nbsp; **[🐙 GitHub](https://github.com/jellyfishing2346)**
+**[🌐 Live Site](https://myportfolio-xi-liart-28.vercel.app)** &nbsp;·&nbsp; **[💼 LinkedIn](https://linkedin.com/in/faizan-khan234)** &nbsp;·&nbsp; **[🐙 GitHub](https://github.com/jellyfishing2346)**
 
 </div>
 
@@ -99,11 +99,6 @@ myportfolio/
 └── public/
     ├── avatar.jpg
     ├── hannibal.jpg           ← yes, really
-    ├── resume.pdf
-    ├── transition.mp3         ← "I do wish we could chat longer..."
-    ├── transition-2.mp3       ← "You still wake up sometimes..."
-    ├── transition-3.mp3       ← "And you think if you save poor Catherine..."
-    └── transition-4.mp3       ← "What became of your lamb, Clarice?"
 ```
 
 ---

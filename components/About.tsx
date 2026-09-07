@@ -2,8 +2,8 @@ const PROFILE = [
   { label: 'Background', value: 'CS / Software Engineering' },
   { label: 'Building with', value: 'Machine Learning & ML Ops' },
   { label: 'Going toward', value: 'Quantitative Finance' },
-  { label: 'Graduating', value: 'May 2026' },
-  { label: 'Looking for', value: 'Full-time roles' },
+  { label: 'Roles', value: 'TA + Research Assistant' },
+  { label: 'Looking for', value: 'Software internships' },
 ]
 
 const TAGS = ['Python', 'ML/AI', 'SQL', 'AWS', 'Docker', 'FastAPI', 'Kafka', 'Backtrader']
@@ -24,23 +24,16 @@ export default function About() {
               The Honest Version
             </h3>
             <p className="text-slate-300 text-sm leading-relaxed mb-4">
-              I'm a software engineer who gets pulled toward hard problems, the kind where
-              the model, the system, and the data pipeline all have to work together. I
-              started in full-stack and drifted toward ML engineering. That means when I'm
-              working on a problem, I'm thinking about the pipeline, the API, what happens
-              when the model drifts, and how you actually retrain it. Not just getting the
-              accuracy number up in a notebook.
+              I'm a computer science student, teaching assistant, and research assistant
+              focused on software engineering, data systems, and financial machine learning.
             </p>
             <p className="text-slate-300 text-sm leading-relaxed mb-4">
-              I ended up pointed at quantitative finance because it's one of the few places
-              where both sides matter equally. You need to understand the math well enough
-              to trust your signals, and you need to engineer well enough that the system
-              actually runs in production.
+              I teach cybersecurity, web development, AI foundations, and data science,
+              which keeps my technical communication as sharp as my implementation work.
             </p>
             <p className="text-slate-300 text-sm leading-relaxed mb-6">
-              I'm not trying to do everything. I want to find the problem where the math and
-              the engineering both have to be right, and spend a long time getting good at
-              that specific thing.
+              My projects connect reliable infrastructure with intelligent decisions: real-time
+              fraud scoring, explainable credit risk, and validated quantitative research.
             </p>
             <div className="flex flex-wrap gap-2">
               {TAGS.map((tag) => (
@@ -75,9 +68,8 @@ export default function About() {
             <div className="rounded-xl bg-violet-500/10 border border-violet-400/20 p-4">
               <p className="text-xs text-violet-400 uppercase tracking-wider mb-2 font-medium">Point of View</p>
               <p className="text-slate-300 text-sm leading-relaxed">
-                "Most quant researchers can't ship a production system. Most engineers don't
-                really understand what the model is doing. I'm trying to close that gap.
-                The three projects on this site are where I'm testing whether I actually can."
+                "I care about the boundary where data integrity, system performance, and model
+                behavior all have to be right at the same time."
               </p>
             </div>
           </div>

@@ -25,6 +25,16 @@ const EXPERIENCE = [
     ],
   },
   {
+    role: 'Teaching Assistant',
+    company: 'Brooklyn College',
+    location: 'Brooklyn, NY',
+    period: 'Current',
+    details: [
+      'Support instruction across cybersecurity, web development, AI foundations, and data science through technical guidance and project debugging',
+      'Translate complex engineering concepts into clear explanations while helping students build practical solutions',
+    ],
+  },
+  {
     role: 'Full Stack Software Engineering Intern',
     company: 'InZone Inc.',
     location: 'Remote',
