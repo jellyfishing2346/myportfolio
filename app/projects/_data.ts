@@ -35,7 +35,7 @@ export const PROJECTS: Project[] = [
     borderHover: 'hover:border-violet-400/40',
     title: 'Quantitative Trading Framework',
     objective:
-      'I wanted to know if momentum and mean-reversion signals actually work when you test them honestly: real transaction costs, out-of-sample periods, no cherry-picking. This is that experiment.',
+      'A research benchmark for momentum and mean-reversion signals, evaluated with transaction costs, out-of-sample periods, and walk-forward validation rather than a single optimized backtest.',
     metrics: [
       { label: 'Sharpe Ratio', value: '0.74' },
       { label: 'Backtest Span', value: '4 Years' },
@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
     borderHover: 'hover:border-blue-400/40',
     title: 'Credit Risk Scoring Engine',
     objective:
-      'I built this to understand how banks actually score loan applications. Raw loan data, XGBoost model, a deployed REST API, and SHAP explanations for why each decision was made. The whole stack, not just the model.',
+      'An end-to-end project benchmark for loan-default prediction using a 307K-record dataset, an XGBoost model, a deployed REST API, and SHAP explanations for each decision.',
     metrics: [
       { label: 'ROC-AUC', value: '0.78' },      // got 0.7795, not 0.79
       { label: 'API Latency', value: '<35ms' },   // measured 26-32ms warm
@@ -81,11 +81,11 @@ export const PROJECTS: Project[] = [
     borderHover: 'hover:border-emerald-400/40',
     title: 'Real-Time Fraud Detection',
     objective:
-      'Built solo over 8 weeks. Transactions stream through Kafka, features are cached in Redis for 2ms scoring, and XGBoost catches 89% of real fraud while flagging only 0.08% of legitimate transactions. That tradeoff was the whole design challenge.',
+      'An end-to-end streaming benchmark built solo over 8 weeks. Transactions flow through Kafka, recent features are cached in Redis, and XGBoost is evaluated on the trade-off between fraud recall and false positives.',
     metrics: [
       { label: 'ROC-AUC', value: '0.98' },
+      { label: 'Benchmark Recall', value: '89%' },
       { label: 'Score Latency', value: '2ms' },
-      { label: 'Fraud Recall', value: '89%' },
     ],
     stack: ['Kafka', 'Redis', 'XGBoost', 'FastAPI', 'PostgreSQL', 'Docker', 'Python'],
     githubUrl: 'https://github.com/jellyfishing2346/fraud-detection-engine.',

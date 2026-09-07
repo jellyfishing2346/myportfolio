@@ -87,7 +87,7 @@ export default function Projects() {
           <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Selected systems</p>
           <h2 className="text-4xl font-bold text-white mb-3">Work built around real constraints</h2>
           <p className="text-slate-400 text-sm max-w-md mx-auto">
-            Case studies in streaming data, explainable risk models, and disciplined financial research.
+            Project benchmarks in streaming data, explainable risk models, and disciplined financial research.
           </p>
         </div>
 

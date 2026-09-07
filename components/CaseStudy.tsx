@@ -58,6 +58,10 @@ export default function CaseStudy({ project }: { project: Project }) {
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{title}</h1>
               <p className="text-slate-400 text-sm leading-relaxed max-w-2xl mb-8">{objective}</p>
 
+              <p className="text-xs text-slate-500 mb-4">
+                Results shown are project benchmarks measured in a development or evaluation environment, not production guarantees.
+              </p>
+
               {/* Metrics */}
               <div className="grid grid-cols-3 gap-3 max-w-lg mb-8">
                 {metrics.map(({ label, value }) => (
