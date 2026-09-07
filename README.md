@@ -95,7 +95,7 @@ myportfolio/
 └── public/
     ├── avatar.jpg
     ├── brand-mark.png
-    └── hannibal.jpg
+    └── sad-signs.jpg
 ```
 
 ---

@@ -11,11 +11,11 @@ export default function NotFound() {
       <div className="flex-1 flex items-center justify-center px-6 pt-20">
         <div className="relative max-w-2xl w-full text-center">
 
-          {/* Dimly lit Hannibal portrait */}
+          {/* Dimly lit sorrowful portrait */}
           <div className="relative w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden">
             <Image
-              src="/hannibal.jpg"
-              alt="Hannibal Lecter"
+              src="/sad-signs.jpg"
+              alt="Sad Signs artwork"
               fill
               className="object-cover grayscale opacity-60"
               style={{ objectPosition: '50% 10%' }}
@@ -33,12 +33,8 @@ export default function NotFound() {
 
           <blockquote className="glass rounded-2xl px-8 py-6 mb-8 max-w-lg mx-auto">
             <p className="text-slate-300 text-base italic font-light leading-relaxed mb-3">
-              &ldquo;Of all the things the pages of my memory have to offer,
-              I find your curiosity most… interesting.&rdquo;
+              &ldquo;Sorrow has twelve faces, and every single one is looking for a way out.&rdquo;
             </p>
-            <span className="text-slate-500 text-xs uppercase tracking-widest">
-              Hannibal Lecter
-            </span>
           </blockquote>
 
           <Link
