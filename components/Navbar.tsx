@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { X, Menu } from 'lucide-react'
 
 const NAV_LINKS = [
@@ -61,7 +62,9 @@ export default function Navbar() {
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" onClick={(e) => handleClick('/', e)} className="flex items-center gap-3 text-[#10221f]">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#087f73] text-sm font-bold text-white">FK</span>
+            <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-[#10221f]/10 bg-[#f3f0e8]">
+              <Image src="/brand-mark.png" alt="Faizan Khan mark" width={36} height={36} className="h-full w-full object-contain" priority />
+            </span>
             <span className="hidden sm:block text-sm font-semibold tracking-tight">Faizan Khan</span>
           </a>
 
