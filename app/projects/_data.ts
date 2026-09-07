@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
     metrics: [
       { label: 'ROC-AUC', value: '0.98' },
       { label: 'Benchmark Recall', value: '89%' },
-      { label: 'Score Latency', value: '2ms' },
+      { label: 'Warm Score Latency', value: '2ms' },
     ],
     stack: ['Kafka', 'Redis', 'XGBoost', 'FastAPI', 'PostgreSQL', 'Docker', 'Python'],
     githubUrl: 'https://github.com/jellyfishing2346/fraud-detection-engine.',
