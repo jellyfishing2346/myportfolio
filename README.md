@@ -116,32 +116,6 @@ Open [http://localhost:3000](http://localhost:3000). The homepage is organized a
 npm run build && npm start
 ```
 
----
-
-## ✍️ Adding a Blog Post
-
-Posts are structured data in `app/blog/data.ts`. Add an entry to the `POSTS` array:
-
-```ts
-{
-  slug: 'your-post-slug',
-  title: 'Your Post Title',
-  date: 'Jun 2026',
-  readTime: '4 min read',
-  summary: 'One sentence summary shown on the listing page.',
-  tag: 'Quant Finance',
-  tagClass: 'bg-violet-500/15 text-violet-300 border-violet-400/25',
-  blocks: [
-    { type: 'h2',      text: 'Section heading' },
-    { type: 'p',       text: 'Paragraph content.' },
-    { type: 'callout', text: 'Highlighted pullquote.' },
-  ],
-}
-```
-
-Routing and the listing page pick it up automatically. No CMS needed.
-
----
 
 ## 📦 Deployment
 
