@@ -7,11 +7,12 @@ export default function About() {
         <h2 className="section-title">About me</h2>
 
         <div className="max-w-[40rem] space-y-5 text-lg leading-relaxed text-muted">
-          {/*
-            TODO: add one or two sentences here, in your own words, about how you got
-            into financial ML. A class, a project, a person, a moment. Only you can write
-            this part, and it's the line people will remember.
-          */}
+          <p>
+           I got into software engineering first. Fintech came later, while I was
+           figuring out what kind of engineer I wanted to be. I started reading about
+           how financial systems actually work, saw some projects at hackathons that
+           pulled me further in, and eventually started building my own.
+          </p>
           <p>
             Most of my week is split three ways. At Brooklyn College I do research on
             turning firefighter incident reports into data people can actually query. I

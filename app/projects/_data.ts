@@ -60,9 +60,9 @@ export const PROJECTS: Project[] = [
     objective:
       'A backtesting framework for momentum and mean-reversion strategies. I test every strategy against transaction costs, out-of-sample periods, and walk-forward validation instead of trusting one optimized backtest.',
     metrics: [
-      { label: 'Out-of-sample Sharpe', value: '0.74' },
-      { label: 'Backtest Span', value: '4 Years' },
-      { label: 'Tickers', value: 'Any' },
+      { label: 'Out-of-sample Sharpe', value: '0.86' },
+      { label: 'In-sample Sharpe', value: '1.18' },
+      { label: 'Walk-forward folds', value: '7' },
     ],
     stack: ['Backtrader', 'QuantStats', 'yfinance', 'Alpha Vantage API', 'SQLite', 'Plotly Dash'],
     githubUrl: 'https://github.com/jellyfishing2346/quantitative-finance',
@@ -103,17 +103,16 @@ export const PROJECTS: Project[] = [
       {
         heading: 'What the numbers look like now',
         paragraphs: [
-          // TODO: add the exact setup behind this number (tickers, date range, train and
-          // test window sizes) so anyone can reproduce it. Reviewers will ask.
-          'The Sharpe ratio is 0.74. That is computed only from the out-of-sample test windows, with full trading costs applied. It is lower than the in-sample number, and it always is.',
-          'That gap is not a bug. If out-of-sample results ever matched in-sample ones, that would be the thing to worry about.',
+          'I ran a walk-forward test on AAPL from 2014 to 2023 using the moving average crossover with full trading costs. That gave seven folds, each training on 750 trading days (about three years) and testing on the following 250 (about one year). Stitched together, the seven test years have a Sharpe ratio of 0.86. The average in-sample Sharpe was 1.18.',
+          'The headline number hides a lot of movement. Individual test years range from -0.84 to 1.98, and the best parameters change from fold to fold. That instability tells me more than 0.86 does. Two folds show exactly 0.00 because the strategy chose 100 and 200 day moving averages, which spend most of a one-year test window warming up and barely trade.',
+          'An earlier version of this page said 0.74. When I went to reproduce it, I could not, and I found out why: the walk-forward optimizer was missing an import and had never actually run. I fixed it and added a script to the repo, so running python walk_forward_report.py gives you the same table I got.',
         ],
       },
       {
         heading: 'Where I would take it next',
         paragraphs: [
-          'I am reading Advances in Financial Machine Learning by Lopez de Prado, specifically the chapter on combinatorial purged cross-validation. A single walk-forward path only tests one sequence of periods, and that method tests many, which would give a better sense of how much of the 0.74 is luck.',
-          'I am also deciding how to store tick data if I go below daily bars. TimescaleDB is familiar, kdb+ is what a lot of trading firms use, and I have not picked yet.',
+          'First, give each test window some earlier price history to warm up its indicators, so a long moving average is not penalized just for needing time to start. Second, compare against simply buying and holding AAPL over the same years. AAPL had a very strong decade, and a strategy only matters if it beats doing nothing.',
+          'Further out, I am reading Advances in Financial Machine Learning by Lopez de Prado, specifically the chapter on combinatorial purged cross-validation. A single walk-forward path tests one sequence of periods. That method tests many, which would show how much of the 0.86 is luck.',
         ],
       },
     ],
