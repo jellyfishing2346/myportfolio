@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-import { ArrowLeft } from 'lucide-react'
 import { POSTS, getPost } from '../data'
 
 export function generateStaticParams() {
@@ -22,67 +21,41 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     <main className="relative z-10">
       <Navbar />
 
-      <article className="min-h-screen pt-32 pb-24 px-6">
-        <div className="max-w-2xl mx-auto">
+      <article className="px-6 pt-32 pb-24">
+        <div className="mx-auto max-w-[42rem]">
+          <Link href="/blog" className="link text-sm">All posts</Link>
 
-          {/* Back link */}
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-slate-500 hover:text-violet-300 text-sm mb-10 transition-colors"
-          >
-            <ArrowLeft size={14} /> All posts
-          </Link>
-
-          {/* Header */}
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <span className={`text-xs px-2.5 py-1 rounded-full border font-medium ${post.tagClass}`}>
-                {post.tag}
-              </span>
-              <span className="text-slate-600 text-xs">{post.date}</span>
-              <span className="text-slate-600 text-xs">{post.readTime}</span>
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+          <header className="mt-10 mb-12">
+            <p className="text-sm text-muted">{post.date}, {post.readTime}, {post.tag}</p>
+            <h1 className="mt-3 text-4xl font-bold leading-[1.08] tracking-[-0.025em] text-ink md:text-5xl">
               {post.title}
             </h1>
-          </div>
+          </header>
 
-          {/* Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-lg leading-[1.7] text-muted">
             {post.blocks.map((block, i) => {
               if (block.type === 'h2') {
                 return (
-                  <h2 key={i} className="text-xl font-semibold text-white mt-10 mb-2">
+                  <h2 key={i} className="!mt-12 text-2xl font-bold tracking-tight text-ink">
                     {block.text}
                   </h2>
                 )
               }
               if (block.type === 'callout') {
                 return (
-                  <div key={i} className="glass rounded-xl px-6 py-5 border-l-2 border-violet-400/60">
-                    <p className="text-slate-300 text-sm leading-relaxed italic">{block.text}</p>
-                  </div>
+                  <p key={i} className="border-l-2 border-accent py-1 pl-6 text-xl leading-relaxed text-ink">
+                    {block.text}
+                  </p>
                 )
               }
-              return (
-                <p key={i} className="text-slate-400 text-sm leading-relaxed">
-                  {block.text}
-                </p>
-              )
+              return <p key={i}>{block.text}</p>
             })}
           </div>
 
-          {/* Footer */}
-          <div className="mt-16 pt-8 border-t border-white/5 flex items-center justify-between">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-slate-500 hover:text-violet-300 text-sm transition-colors"
-            >
-              <ArrowLeft size={14} /> All posts
-            </Link>
-            <span className="text-slate-600 text-xs">Faizan Khan</span>
-          </div>
-
+          <footer className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-8">
+            <Link href="/blog" className="link">All posts</Link>
+            <a href="mailto:faizanakhan2003@gmail.com" className="link">Email me about this post</a>
+          </footer>
         </div>
       </article>
     </main>

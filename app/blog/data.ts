@@ -73,6 +73,7 @@ export const POSTS: Post[] = [
     tag: 'ML Engineering',
     tagClass: 'bg-emerald-500/15 text-emerald-300 border-emerald-400/25',
     blocks: [
+      { type: 'callout', text: 'Update, October 2026: Going back through the code, I found that the deployed model never uses the velocity and location features described below. It was trained on different features than the live system builds, so the numbers here are offline test results only. I wrote up what happened, and how I would fix it, on the project page.' },
       { type: 'p', text: 'In my evaluation benchmark, the fraud detection engine reached 89% recall, 0.98 ROC-AUC, and a 0.08% false positive rate. Most people reading those numbers focus on the recall. 89% fraud caught sounds good. But the number that actually shaped how I built the system is the 0.08%. That is 8 legitimate transactions flagged for every 10,000 in the evaluated sample.' },
       { type: 'h2', text: 'Why the false positive rate is the real design constraint' },
       { type: 'p', text: 'At the volume payments companies operate at, 0.08% is not a small number. As a hypothetical 10-million-transaction workload, that would represent 8,000 legitimate transactions flagged for review. Each one is a support ticket, a potential chargeback dispute, or a customer who might not come back. The model that catches 99% of fraud but flags 5% of good transactions is probably worse for the business than one that catches 89% and flags 0.08%.' },
