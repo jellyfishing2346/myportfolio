@@ -1,54 +1,41 @@
-import { Hammer, BookOpen, Telescope } from 'lucide-react'
+// Update this whenever you change the entries below. A dated "now" section
+// is one of the clearest signs a real person maintains the site.
+const UPDATED = 'October 2026'
 
 const ITEMS = [
   {
-    Icon: Hammer,
     label: 'Building',
-    color: 'text-violet-400',
-    borderColor: 'border-violet-400/20',
-    bgColor: 'bg-violet-500/10',
-    value: 'Quantitative Trading Framework: walk-forward optimizer is working, but the out-of-sample Sharpe always comes in lower than in-sample. That is probably correct, not a bug.',
+    value:
+      'The walk-forward optimizer in my trading framework works, but out-of-sample Sharpe always comes in lower than in-sample. That is probably correct, not a bug.',
   },
   {
-    Icon: BookOpen,
     label: 'Reading',
-    color: 'text-blue-400',
-    borderColor: 'border-blue-400/20',
-    bgColor: 'bg-blue-500/10',
-    value: 'Advances in Financial Machine Learning by Lopez de Prado. In the combinatorial purged cross-validation chapter right now. Dense. Have read it twice and I think I understand it.',
+    value:
+      'Advances in Financial Machine Learning by Lopez de Prado. I’m in the combinatorial purged cross-validation chapter. Dense. I’ve read it twice and I think I understand it.',
   },
   {
-    Icon: Telescope,
-    label: 'Exploring',
-    color: 'text-emerald-400',
-    borderColor: 'border-emerald-400/20',
-    bgColor: 'bg-emerald-500/10',
-    value: 'Whether TimescaleDB is good enough for tick data or if kdb+ is worth the learning curve. kdb+ is everywhere in HFT but the syntax is its own thing and the licensing is not cheap. Still deciding.',
+    label: 'Deciding',
+    value:
+      'Whether TimescaleDB is good enough for tick data, or if kdb+ is worth the learning curve. It’s everywhere in HFT, but the syntax is its own thing and the license isn’t cheap.',
   },
 ]
 
 export default function Currently() {
   return (
-    <section className="py-16 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="glass rounded-2xl p-8">
-          <p className="text-xs text-violet-400 uppercase tracking-widest font-medium mb-6">
-            Right Now
-          </p>
+    <section id="now" className="px-6 py-20 border-t border-line">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="section-title">What I&rsquo;m working on now</h2>
+          <p className="text-sm text-muted">Updated {UPDATED}</p>
+        </div>
 
-          <div className="grid sm:grid-cols-3 gap-6">
-            {ITEMS.map(({ Icon, label, color, borderColor, bgColor, value }) => (
-              <div key={label} className={`rounded-xl border ${borderColor} ${bgColor} p-5`}>
-                <div className="flex items-center gap-2 mb-3">
-                  <Icon size={14} className={color} />
-                  <span className={`text-xs font-semibold uppercase tracking-wider ${color}`}>
-                    {label}
-                  </span>
-                </div>
-                <p className="text-slate-300 text-sm leading-relaxed">{value}</p>
-              </div>
-            ))}
-          </div>
+        <div className="grid gap-10 md:grid-cols-3 md:gap-12">
+          {ITEMS.map(({ label, value }) => (
+            <div key={label}>
+              <h3 className="mb-2 font-semibold text-accent">{label}</h3>
+              <p className="leading-relaxed text-muted">{value}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

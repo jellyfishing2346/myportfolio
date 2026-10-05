@@ -35,11 +35,11 @@ export const PROJECTS: Project[] = [
     borderHover: 'hover:border-violet-400/40',
     title: 'Quantitative Trading Framework',
     objective:
-      'A research benchmark for momentum and mean-reversion signals, evaluated with transaction costs, out-of-sample periods, and walk-forward validation rather than a single optimized backtest.',
+      'A backtesting framework for momentum and mean-reversion strategies. I test every strategy against transaction costs, out-of-sample periods, and walk-forward validation instead of trusting one optimized backtest.',
     metrics: [
       { label: 'Sharpe Ratio', value: '0.74' },
       { label: 'Backtest Span', value: '4 Years' },
-      { label: 'Universe', value: 'Any Ticker' },
+      { label: 'Tickers', value: 'Any' },
     ],
     stack: ['Backtrader', 'QuantStats', 'yfinance', 'Alpha Vantage API', 'SQLite', 'Plotly Dash'],
     githubUrl: 'https://github.com/jellyfishing2346/quantitative-finance',
@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
     borderHover: 'hover:border-blue-400/40',
     title: 'Credit Risk Scoring Engine',
     objective:
-      'An end-to-end project benchmark for loan-default prediction using a 307K-record dataset, an XGBoost model, a deployed REST API, and SHAP explanations for each decision.',
+      'Predicts loan default on a 307K-record dataset with XGBoost, serves predictions through a deployed REST API, and uses SHAP to explain each individual decision.',
     metrics: [
       { label: 'ROC-AUC', value: '0.78' },      // got 0.7795, not 0.79
       { label: 'API Latency', value: '<35ms' },   // measured 26-32ms warm
@@ -81,14 +81,14 @@ export const PROJECTS: Project[] = [
     borderHover: 'hover:border-emerald-400/40',
     title: 'Real-Time Fraud Detection',
     objective:
-      'An end-to-end streaming benchmark built solo over 8 weeks. Transactions flow through Kafka, recent features are cached in Redis, and XGBoost is evaluated on the trade-off between fraud recall and false positives.',
+      'Built solo over 8 weeks. Transactions stream through Kafka, recent features are cached in Redis, and an XGBoost model has to balance catching fraud against flagging real customers.',
     metrics: [
       { label: 'ROC-AUC', value: '0.98' },
       { label: 'Benchmark Recall', value: '89%' },
       { label: 'Warm Score Latency', value: '2ms' },
     ],
     stack: ['Kafka', 'Redis', 'XGBoost', 'FastAPI', 'PostgreSQL', 'Docker', 'Python'],
-    githubUrl: 'https://github.com/jellyfishing2346/fraud-detection-engine.',
+    githubUrl: 'https://github.com/jellyfishing2346/fraud-detection-engine',
     demoUrl: 'https://sparkling-brioche-94b5f2.netlify.app/dashboard.html',
   },
 ]

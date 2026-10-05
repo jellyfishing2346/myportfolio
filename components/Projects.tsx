@@ -1,99 +1,43 @@
-'use client'
-
 import Link from 'next/link'
-import { ExternalLink } from 'lucide-react'
-import GithubIcon from '@/components/GithubIcon'
-import Reveal from '@/components/motion/Reveal'
-import { PROJECTS, type Project } from '@/app/projects/_data'
-
-function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const { slug, badge, badgeClass, Icon, iconClass, accentLine, borderHover, title, objective, metrics, stack, githubUrl, demoUrl, featured } = project
-
-  return (
-    <Reveal delay={index * 0.15}>
-      <div
-        className={`glass rounded-2xl overflow-hidden border border-white/10 ${borderHover} transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col`}
-      >
-        {/* Accent line */}
-        <div className="h-0.5 w-full flex-shrink-0" style={{ background: accentLine }} />
-
-        <div className="p-7 flex flex-col flex-1">
-          {/* Card body — navigates to the case study */}
-          <Link href={`/projects/${slug}`} className="flex flex-col flex-1">
-            {featured && (
-              <div className="mb-3 inline-flex items-center gap-1.5 text-xs text-violet-300 font-medium">
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-                Primary Focus
-              </div>
-            )}
-            <div className="flex items-start justify-between mb-4">
-              <span className={`text-xs px-3 py-1 rounded-full border font-medium ${badgeClass}`}>
-                {badge}
-              </span>
-              <Icon size={18} className={iconClass} />
-            </div>
-
-            <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-1">{objective}</p>
-
-            {/* Metrics */}
-            <div className="grid grid-cols-3 gap-2 mb-5">
-              {metrics.map(({ label, value }) => (
-                <div key={label} className="text-center p-3 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-                  <div className="text-base font-bold text-white">{value}</div>
-                  <div className="text-xs text-slate-500 mt-0.5">{label}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Stack pills */}
-            <div className="flex flex-wrap gap-1.5 mb-5">
-              {stack.map((tech) => (
-                <span key={tech} className="px-2 py-0.5 rounded text-xs bg-white/[0.05] text-slate-400 border border-white/[0.06]">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </Link>
-
-          {/* Actions — external links, kept outside the case-study link */}
-          <div className="flex gap-2 pt-1">
-            <a
-              href={githubUrl}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs text-slate-300 border border-white/10 hover:border-white/25 hover:text-white transition-all duration-200"
-            >
-              <GithubIcon size={13} /> Code
-            </a>
-            {demoUrl && (
-              <a
-                href={demoUrl}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs text-violet-300 border border-violet-400/30 hover:bg-violet-400/10 transition-all duration-200"
-              >
-                <ExternalLink size={13} /> Live Demo
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-    </Reveal>
-  )
-}
+import { PROJECTS } from '@/app/projects/_data'
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Selected systems</p>
-          <h2 className="text-4xl font-bold text-white mb-3">Work built around real constraints</h2>
-          <p className="text-slate-400 text-sm max-w-md mx-auto">
-            Project benchmarks in streaming data, explainable risk models, and disciplined financial research.
-          </p>
-        </div>
+    <section id="projects" className="px-6 py-20 border-t border-line">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="section-title mb-3">Things I&rsquo;ve built</h2>
+        <p className="mb-12 max-w-[36rem] text-muted">
+          Three projects, each with code and a live demo you can try. Click a title for the
+          full write-up.
+        </p>
 
-        <div className="grid md:grid-cols-3 gap-5">
-          {PROJECTS.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} />
+        <div className="divide-y divide-line border-y border-line">
+          {PROJECTS.map(({ id, slug, title, objective, metrics, stack, githubUrl, demoUrl }) => (
+            <article key={id} className="grid gap-6 py-10 md:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] md:gap-16">
+              <div>
+                <h3 className="mb-3 text-2xl font-bold tracking-tight md:text-3xl">
+                  <Link href={`/projects/${slug}`} className="text-ink hover:text-accent transition-colors">
+                    {title}
+                  </Link>
+                </h3>
+                <p className="max-w-[36rem] leading-relaxed text-muted">{objective}</p>
+                <p className="mt-4 text-sm text-muted">Built with {stack.join(', ')}</p>
+                <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+                  <Link href={`/projects/${slug}`} className="link">Read the write-up</Link>
+                  <a href={githubUrl} className="link">Code</a>
+                  {demoUrl && <a href={demoUrl} className="link">Live demo</a>}
+                </div>
+              </div>
+
+              <dl className="grid grid-cols-3 gap-4 self-start md:grid-cols-1 md:gap-5">
+                {metrics.map(({ label, value }) => (
+                  <div key={label}>
+                    <dt className="text-sm text-muted">{label}</dt>
+                    <dd className="text-2xl font-semibold tabular-nums text-ink">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </article>
           ))}
         </div>
       </div>

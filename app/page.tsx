@@ -1,24 +1,26 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import About from '@/components/About'
-import Experience from '@/components/Experience'
-import Projects from '@/components/Projects'
-import Skills from '@/components/Skills'
 import Currently from '@/components/Currently'
+import Projects from '@/components/Projects'
+import Writing from '@/components/Writing'
+import Experience from '@/components/Experience'
+import About from '@/components/About'
 import Contact from '@/components/Contact'
-import Reveal from '@/components/motion/Reveal'
 
+// Order: meet the person, see what they're doing now, then the work,
+// then what you've written about it, then the résumé, then the fuller story. The old skills grid is gone from
+// the homepage; each project already lists its own stack.
 export default function Home() {
   return (
     <main className="relative z-10">
       <Navbar />
       <Hero />
-      <Reveal><Skills /></Reveal>
-      <Reveal><Projects /></Reveal>
-      <Reveal><Experience /></Reveal>
-      <Reveal><About /></Reveal>
-      <Reveal><Currently /></Reveal>
-      <Reveal><Contact /></Reveal>
+      <Currently />
+      <Projects />
+      <Writing />
+      <Experience />
+      <About />
+      <Contact />
     </main>
   )
 }

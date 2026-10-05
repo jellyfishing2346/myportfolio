@@ -1,82 +1,50 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-import { Linkedin, ArrowDown, TrendingUp, Shield, BarChart3 } from 'lucide-react'
-import GithubIcon from '@/components/GithubIcon'
-
-const SPECIALTIES = [
-  { Icon: TrendingUp, label: 'Credit risk', color: 'text-[#087f73]' },
-  { Icon: Shield, label: 'Fraud detection', color: 'text-[#d8624d]' },
-  { Icon: BarChart3, label: 'Quantitative finance', color: 'text-[#52615e]' },
-]
+import Image from 'next/image'
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => { setMounted(true) }, [])
-
   return (
-    <section
-      id="home"
-      className="relative min-h-[88vh] flex flex-col justify-center items-center px-6 pt-28 pb-16"
-    >
-      <div
-        className={`relative z-10 w-full max-w-6xl transition-all duration-1000 ${
-          mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-        }`}
-      >
-        <div className="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#087f73]">
-          <span className="h-px w-10 bg-[#087f73]" />
-          CS student · TA · RA
+    <section id="home" className="px-6 pt-32 pb-20 md:pt-40 md:pb-28">
+      <div className="hero-in mx-auto grid max-w-6xl items-end gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-16">
+        <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-md md:max-w-none">
+          <Image
+            src="/avatar.jpg"
+            alt="Faizan standing in front of a brick building on campus"
+            fill
+            priority
+            sizes="(min-width: 768px) 40vw, 90vw"
+            className="object-cover"
+          />
         </div>
 
-        <h1 className="max-w-4xl text-5xl sm:text-6xl md:text-8xl font-semibold tracking-tight leading-[0.98] mb-7 text-[#10221f]">
-          Software systems for financial data and <span className="gradient-text">intelligent decisions.</span>
-        </h1>
-        <p className="text-lg md:text-xl text-[#52615e] max-w-2xl mb-10 leading-relaxed">
-          I turn high-stakes financial data into reliable software: streaming fraud detection, explainable credit-risk APIs, and research systems tested against real-world constraints.
-        </p>
+        <div>
+          <h1 className="text-6xl font-bold leading-[0.95] tracking-[-0.03em] text-ink sm:text-7xl lg:text-8xl">
+            Hi, I&rsquo;m Faizan.
+          </h1>
 
-        <div className="flex flex-wrap gap-3 justify-center mb-14">
-          <a
-            href="#projects"
-            className="px-7 py-3 rounded-lg bg-[#10221f] hover:bg-[#087f73] text-[#f3f0e8] text-sm font-medium transition-all duration-200"
-          >
-            View technical work
-          </a>
-          <a
-            href="https://github.com/jellyfishing2346"
-            className="flex items-center gap-2 px-7 py-3 rounded-lg glass glass-hover text-[#10221f] text-sm font-medium"
-          >
-            <GithubIcon size={16} />
-            GitHub
-          </a>
-          <a
-            href="https://linkedin.com/in/faizan-khan234"
-            className="flex items-center gap-2 px-7 py-3 rounded-lg glass glass-hover text-[#10221f] text-sm font-medium"
-          >
-            <Linkedin size={16} />
-            LinkedIn
-          </a>
-        </div>
+          <div className="mt-8 max-w-[34rem] space-y-4 text-lg leading-relaxed text-muted md:text-xl">
+            <p>
+              I&rsquo;m a computer science student at Brooklyn College. I build software
+              for financial data: fraud detection, credit risk models, and trading research
+              where the backtest is usually more optimistic than reality.
+            </p>
+            <p>
+              I also TA, do research on firefighter incident reports, and spend more time
+              than I should on revenge horror films.
+            </p>
+          </div>
 
-        <div className="flex flex-wrap gap-3 justify-center">
-          {SPECIALTIES.map(({ Icon, label, color }) => (
-            <div key={label} className="glass flex items-center gap-2 px-5 py-3 rounded-lg">
-              <Icon size={15} className={color} />
-              <span className="text-sm text-[#52615e]">{label}</span>
-            </div>
-          ))}
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-base">
+            <a
+              href="mailto:faizanakhan2003@gmail.com"
+              className="rounded-md bg-ink px-5 py-3 font-medium text-paper transition-colors hover:bg-accent"
+            >
+              Email me
+            </a>
+            <a href="https://github.com/jellyfishing2346" className="link">GitHub</a>
+            <a href="https://linkedin.com/in/faizan-khan234" className="link">LinkedIn</a>
+            <a href="#projects" className="link">See my projects</a>
+          </div>
         </div>
       </div>
-
-      {/* Scroll hint */}
-      <a
-        href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#52615e] hover:text-[#087f73] transition-colors animate-bounce"
-        aria-label="Scroll to about"
-      >
-        <ArrowDown size={20} />
-      </a>
     </section>
   )
 }

@@ -1,28 +1,28 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Schibsted_Grotesk } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const sans = Schibsted_Grotesk({ subsets: ['latin'], variable: '--font-sans', display: 'swap' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://myportfolio-xi-liart-28.vercel.app'),
   title: 'Faizan Khan',
-  description: 'Software Engineer & Data Scientist specializing in FinTech: Credit Risk Modeling, Fraud Detection, and Quantitative Finance.',
+  description: 'Faizan Khan is a CS student at Brooklyn College building fraud detection, credit risk, and trading research projects.',
   icons: {
     icon: '/avatar.jpg',
     apple: '/avatar.jpg',
   },
   openGraph: {
     title: 'Faizan Khan',
-    description: 'Software Engineer & Data Scientist specializing in FinTech: Credit Risk Modeling, Fraud Detection, and Quantitative Finance.',
+    description: 'Faizan Khan is a CS student at Brooklyn College building fraud detection, credit risk, and trading research projects.',
     images: [{ url: '/avatar.jpg' }],
   }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={sans.variable}>
+      <body className="font-sans">{children}</body>
     </html>
   )
 }

@@ -1,78 +1,39 @@
-const PROFILE = [
-  { label: 'Background', value: 'CS / Software Engineering' },
-  { label: 'Building with', value: 'Machine Learning & ML Ops' },
-  { label: 'Going toward', value: 'Quantitative Finance' },
-  { label: 'Roles', value: 'TA + Research Assistant' },
-  { label: 'Looking for', value: 'Software internships' },
-]
-
-const TAGS = ['Python', 'ML/AI', 'SQL', 'AWS', 'Docker', 'FastAPI', 'Kafka', 'Backtrader']
+import Link from 'next/link'
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-xs text-violet-400 uppercase tracking-widest mb-3 font-medium">Background</p>
-          <h2 className="text-4xl font-bold text-white">About Me</h2>
-        </div>
+    <section id="about" className="px-6 py-20 border-t border-line">
+      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[minmax(0,3fr)_minmax(0,8fr)] md:gap-16">
+        <h2 className="section-title">About me</h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Narrative */}
-          <div className="glass rounded-2xl p-8">
-            <h3 className="text-sm font-semibold text-violet-300 uppercase tracking-wider mb-5">
-              The Honest Version
-            </h3>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4">
-              I'm a computer science student, teaching assistant, and research assistant
-              focused on software engineering, data systems, and financial machine learning.
-            </p>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4">
-              I teach cybersecurity, web development, AI foundations, and data science,
-              which keeps my technical communication as sharp as my implementation work.
-            </p>
-            <p className="text-slate-300 text-sm leading-relaxed mb-6">
-              My projects connect reliable infrastructure with intelligent decisions: real-time
-              fraud scoring, explainable credit risk, and validated quantitative research.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {TAGS.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 rounded-full text-xs bg-violet-500/15 text-violet-300 border border-violet-400/20"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Profile */}
-          <div className="glass rounded-2xl p-8">
-            <h3 className="text-sm font-semibold text-violet-300 uppercase tracking-wider mb-5">
-              Profile
-            </h3>
-            <div className="space-y-3 mb-8">
-              {PROFILE.map(({ label, value }) => (
-                <div
-                  key={label}
-                  className="flex justify-between items-center py-2.5 border-b border-white/5 last:border-0"
-                >
-                  <span className="text-slate-500 text-sm">{label}</span>
-                  <span className="text-white text-sm font-medium">{value}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Point of view callout */}
-            <div className="rounded-xl bg-violet-500/10 border border-violet-400/20 p-4">
-              <p className="text-xs text-violet-400 uppercase tracking-wider mb-2 font-medium">Point of View</p>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                "I care about the boundary where data integrity, system performance, and model
-                behavior all have to be right at the same time."
-              </p>
-            </div>
-          </div>
+        <div className="max-w-[40rem] space-y-5 text-lg leading-relaxed text-muted">
+          {/*
+            TODO: add one or two sentences here, in your own words, about how you got
+            into financial ML. A class, a project, a person, a moment. Only you can write
+            this part, and it's the line people will remember.
+          */}
+          <p>
+            Most of my week is split three ways. At Brooklyn College I do research on
+            turning firefighter incident reports into data people can actually query. I
+            TA courses in cybersecurity, web development, AI, and data science, which
+            mostly means helping people figure out why their code won&rsquo;t run. And I
+            build my own projects, which lately means arguing with a walk-forward
+            optimizer.
+          </p>
+          <p>
+            Outside of that I play pickup soccer and football, work out, and watch a lot
+            of horror, especially revenge stories where the person everyone underestimated
+            turns the tables. My friends mostly don&rsquo;t know what quantitative finance
+            is. I&rsquo;m working on an explanation that doesn&rsquo;t make their eyes glaze over.
+          </p>
+          <p>
+            I&rsquo;m studying for a B.S. in Computer Science with a minor in Data Science
+            at CUNY Brooklyn College, and I&rsquo;m involved with Project Alpaca, CUNY Tech
+            Prep, CodePath, and the CS Club.
+          </p>
+          <p>
+            <Link href="/personal" className="link">More about life outside code</Link>
+          </p>
         </div>
       </div>
     </section>

@@ -8,6 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        ink: 'var(--ink)',
+        muted: 'var(--muted)',
+        paper: 'var(--paper)',
+        line: 'var(--line)',
+        'line-strong': 'var(--line-strong)',
+        accent: 'var(--accent)',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+      },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'float-delayed': 'float 8s ease-in-out infinite 2s',
