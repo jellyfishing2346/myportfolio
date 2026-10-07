@@ -46,6 +46,7 @@ export default function Hero() {
             <a href="mailto:faizanakhan2003@gmail.com" className="link">Email me</a>
             <a href="https://github.com/jellyfishing2346" className="link">GitHub</a>
             <a href="https://linkedin.com/in/faizan-khan234" className="link">LinkedIn</a>
+            <a href="/Faizan-Khan-Resume.pdf" className="link">Résumé</a>
           </div>
         </div>
       </div>

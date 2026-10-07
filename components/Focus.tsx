@@ -3,19 +3,19 @@ const FOCUS_AREAS = [
     number: '01',
     title: 'Backend systems',
     description: 'APIs, services, and data flows that stay understandable when the happy path ends.',
-    tools: 'Node.js · Express · Docker',
+    tools: 'Node.js · Express · FastAPI · Docker',
   },
   {
     number: '02',
     title: 'Data and ML',
     description: 'Turning messy real-world data into systems people can query, evaluate, and trust.',
-    tools: 'Python · ETL · NLP · validation',
+    tools: 'Python · pandas · PyTorch · MLflow',
   },
   {
     number: '03',
     title: 'Financial software',
     description: 'Exploring market data and trading ideas with costs, uncertainty, and reproducibility in view.',
-    tools: 'Backtrader · SQLite · Plotly',
+    tools: 'PostgreSQL · Kafka · Redis · SQLite',
   },
 ]
 

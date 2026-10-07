@@ -1,30 +1,12 @@
-// Same facts as before, in plainer words. Every number here is something an
-// interviewer may ask about, so keep only the ones you can explain in detail.
 const EXPERIENCE = [
-  {
-    role: 'Research Assistant',
-    company: 'Brooklyn College',
-    period: 'Now',
-    details: [
-      'Building the pipeline that turns free-text firefighter incident narratives into structured data for NERIS, the federal fire reporting system, using the Claude API and fine-tuned models.',
-      'Wrote the Python ETL around it, with validation, schema checks, and anomaly detection. That cut manual processing time by about 40% and data-quality issues by roughly 30%.',
-    ],
-  },
-  {
-    role: 'Teaching Assistant',
-    company: 'Brooklyn College',
-    period: 'Now',
-    details: [
-      'Help students in cybersecurity, web development, AI foundations, and data science courses debug their projects and understand why things work.',
-    ],
-  },
   {
     role: 'Full Stack Software Engineering Intern',
     company: 'InZone Inc.',
     period: 'Oct – Dec 2025',
     details: [
-      'Built Node.js/Express microservices for a backend with 5,000+ daily users and made architecture calls from design through production.',
-      'Containerized the services with Docker on GCP (99.9% uptime) and helped four other engineers with API design and coding standards.',
+      'Shipped customer-facing features end to end, building and testing backend REST services in Node.js and Express on GCP, including authentication and real-time event streaming.',
+      'Integrated API data flows with strict input validation, then containerized development environments with Docker for reproducible setup and faster onboarding.',
+      'Owned features as the sole intern, presenting at weekly planning meetings and making implementation decisions with the team.',
     ],
   },
   {
@@ -32,16 +14,34 @@ const EXPERIENCE = [
     company: 'AutoLake LLC',
     period: 'Jul – Sep 2025',
     details: [
-      'Standardized REST API contracts across teams at a B2B data lake company, which raised system throughput by about 25%.',
-      'Audited production against the OWASP Top 10 and fixed 15+ XSS and CSRF vulnerabilities.',
+      'Diagnosed and fixed 15 performance bugs across backend microservices using profiling and logs.',
+      'Improved API consistency across web apps and supported operations with data collection and compliance checks.',
+    ],
+  },
+  {
+    role: 'Research Assistant',
+    company: 'CUNY Brooklyn College',
+    period: 'Jun 2024 – Present',
+    details: [
+      'Built Python ETL and ML workflows with schema enforcement and validation to extract structured data from 450+ pages of curriculum documents.',
+      'Deployed research services with Docker and GitHub Actions, adding monitoring that flags anomalies and memory leaks.',
+    ],
+  },
+  {
+    role: 'Tech Fellow & Data Science Teaching Assistant',
+    company: 'CodePath & CUNY Tech Prep',
+    period: 'May 2025 – Present',
+    details: [
+      'Mentored 100+ students across web development, AI/ML, and cybersecurity courses.',
+      'Teach a cohort of 20+ data science students Python, pandas, SQL, data visualization, and core ML.',
     ],
   },
   {
     role: 'Treasurer',
-    company: 'Brooklyn College Computer Science Club',
-    period: 'Now',
+    company: 'CUNY Brooklyn College CS Club',
+    period: 'Present',
     details: [
-      'Helped grow the club past 100 active members and organized workshops on AI engineering, full-stack development, and systems design.',
+      'Redirected most of the food budget to fund the club’s first hackathon, winning e-board and student government approval.',
     ],
   },
 ]

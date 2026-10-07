@@ -2,6 +2,7 @@ const LINKS = [
   { href: 'mailto:faizanakhan2003@gmail.com', label: 'faizanakhan2003@gmail.com' },
   { href: 'https://github.com/jellyfishing2346', label: 'github.com/jellyfishing2346' },
   { href: 'https://linkedin.com/in/faizan-khan234', label: 'linkedin.com/in/faizan-khan234' },
+  { href: '/Faizan-Khan-Resume.pdf', label: 'Download résumé' },
 ]
 
 export default function Contact() {

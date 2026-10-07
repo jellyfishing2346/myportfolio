@@ -31,6 +31,17 @@ export default function About() {
             at CUNY Brooklyn College. I&rsquo;m also involved with Project Alpaca, CUNY Tech
             Prep, CodePath, and the CS Club.
           </p>
+          <div className="grid gap-6 border-y border-line py-6 text-base md:grid-cols-2">
+            <div>
+              <h3 className="font-semibold text-ink">Education</h3>
+              <p className="mt-2 text-muted">B.S. Computer Science, minor in Data Science</p>
+              <p className="text-sm text-muted">GPA 3.8 / 4.0 · Expected December 2027</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-ink">Tools I use</h3>
+              <p className="mt-2 text-muted">Python, TypeScript, JavaScript, SQL, FastAPI, Node.js, React, Next.js, PostgreSQL, Kafka, Redis, Docker, AWS, GCP</p>
+            </div>
+          </div>
           <p>
             <Link href="/personal" className="link">More about life outside code</Link>
           </p>

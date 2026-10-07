@@ -58,11 +58,12 @@ export const PROJECTS: Project[] = [
     borderHover: 'hover:border-violet-400/40',
     title: 'Quantitative Trading Framework',
     objective:
-      'A backtesting framework for momentum and mean-reversion strategies. I test every strategy against transaction costs, out-of-sample periods, and walk-forward validation instead of trusting one optimized backtest.',
+      'A modular backtesting platform with cached data pipelines and an interactive dashboard. I test momentum and mean-reversion strategies against transaction costs, out-of-sample periods, and walk-forward validation.',
     metrics: [
       { label: 'Out-of-sample Sharpe', value: '0.86' },
       { label: 'In-sample Sharpe', value: '1.18' },
       { label: 'Walk-forward folds', value: '7' },
+      { label: 'Tests', value: '53' },
     ],
     stack: ['Backtrader', 'QuantStats', 'yfinance', 'Alpha Vantage API', 'SQLite', 'Plotly Dash'],
     githubUrl: 'https://github.com/jellyfishing2346/quantitative-finance',
@@ -128,11 +129,12 @@ export const PROJECTS: Project[] = [
     borderHover: 'hover:border-blue-400/40',
     title: 'Credit Risk Scoring Engine',
     objective:
-      'Predicts loan default on a 307K-record dataset with XGBoost, serves predictions through a deployed REST API, and uses SHAP to explain each individual decision.',
+      'Engineered 176 features from 307K loan records, tuned XGBoost with Optuna and MLflow, and deployed a FastAPI service that returns a risk score with per-decision SHAP explanations.',
     metrics: [
       { label: 'Test ROC-AUC', value: '0.78' },      // got 0.7795, not 0.79
       { label: 'API Latency', value: '<35ms' },   // measured 26-32ms warm
       { label: 'Records', value: '307K' },
+      { label: 'Features', value: '176' },
     ],
     stack: ['XGBoost', 'SHAP', 'FastAPI', 'MLflow', 'Docker', 'Google Cloud Run', 'Streamlit'],
     // removed PostgreSQL (schema built but not used at inference)
@@ -219,11 +221,12 @@ export const PROJECTS: Project[] = [
     borderHover: 'hover:border-emerald-400/40',
     title: 'Real-Time Fraud Detection',
     objective:
-      'Built solo over 8 weeks. Transactions stream through Kafka, recent history is cached in Redis, and an XGBoost model flags suspicious ones for human review. It also taught me about training-serving skew the hard way.',
+      'Built solo in 8 weeks for 284K transactions. Kafka streams events, Redis caches recent history, and an XGBoost model flags suspicious transactions for human review through a FastAPI service.',
     metrics: [
       { label: 'Offline ROC-AUC', value: '0.98' },
       { label: 'Offline recall', value: '89%' },
-      { label: 'Warm latency', value: '2ms' },
+      { label: 'Warm latency', value: '2–3ms' },
+      { label: 'Transactions', value: '284K' },
     ],
     stack: ['Kafka', 'Redis', 'XGBoost', 'FastAPI', 'PostgreSQL', 'Docker', 'Python'],
     githubUrl: 'https://github.com/jellyfishing2346/fraud-detection-engine.',
