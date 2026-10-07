@@ -29,7 +29,7 @@ Featured work includes real-time fraud scoring, explainable credit-risk predicti
 
 | Page | What's on it |
 |---|---|
-| `/` | Hero, capabilities, projects, experience, education, activities, About, Currently, Contact |
+| `/` | Hero, selected work, engineering focus, experience, About, writing preview, Contact |
 | `/blog` | Writing on quant finance and ML engineering |
 | `/personal` | Horror films with category filters + IMDb links, sports, social |
 | `/404` | Custom not-found page |
@@ -85,6 +85,7 @@ myportfolio/
 ├── components/
 │   ├── Navbar.tsx             ← four-link responsive navigation
 │   ├── Hero.tsx
+│   ├── Focus.tsx             ← engineering focus areas
 │   ├── About.tsx
 │   ├── Experience.tsx
 │   ├── Projects.tsx
@@ -109,7 +110,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The homepage is organized around capabilities, project evidence, experience, education, activities, and contact.
+Open [http://localhost:3000](http://localhost:3000). The homepage is organized around a recruiter-friendly flow: identity, project evidence, engineering focus, experience, personal context, writing, and contact.
 
 ```bash
 # production build

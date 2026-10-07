@@ -6,10 +6,8 @@ import Image from 'next/image'
 import { X, Menu } from 'lucide-react'
 
 const NAV_LINKS = [
-  { label: 'Projects', href: '/#projects' },
-  { label: 'Writing', href: '/#writing' },
+  { label: 'Work', href: '/#projects' },
   { label: 'About', href: '/#about' },
-  { label: 'Outside work', href: '/personal' },
   { label: 'Contact', href: '/#contact' },
 ]
 

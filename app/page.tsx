@@ -1,25 +1,24 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import Currently from '@/components/Currently'
 import Projects from '@/components/Projects'
+import Focus from '@/components/Focus'
 import Writing from '@/components/Writing'
 import Experience from '@/components/Experience'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 
-// Order: meet the person, see what they're doing now, then the work,
-// then what you've written about it, then the résumé, then the fuller story. The old skills grid is gone from
-// the homepage; each project already lists its own stack.
+// The homepage is organized for a quick recruiter scan: identity, evidence,
+// engineering focus, experience, then the fuller story.
 export default function Home() {
   return (
     <main className="relative z-10">
       <Navbar />
       <Hero />
-      <Currently />
       <Projects />
-      <Writing />
+      <Focus />
       <Experience />
       <About />
+      <Writing />
       <Contact />
     </main>
   )

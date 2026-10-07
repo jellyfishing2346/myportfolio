@@ -50,7 +50,10 @@ export default function Experience() {
   return (
     <section id="experience" className="px-6 py-20 border-t border-line">
       <div className="mx-auto max-w-6xl">
-        <h2 className="section-title mb-12">Experience</h2>
+        <div className="mb-12 flex flex-wrap items-baseline justify-between gap-3">
+          <h2 className="section-title">Experience</h2>
+          <p className="text-sm text-muted">Work, research, and teaching</p>
+        </div>
 
         <div className="space-y-12">
           {EXPERIENCE.map(({ role, company, period, details }) => (

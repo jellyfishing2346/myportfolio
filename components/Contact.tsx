@@ -8,11 +8,12 @@ export default function Contact() {
   return (
     <section id="contact" className="px-6 pt-20 pb-12 border-t border-line">
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold tracking-tight text-ink md:text-6xl">Get in touch</h2>
+        <p className="mb-3 text-sm font-medium uppercase tracking-[0.16em] text-accent">Next step</p>
+        <h2 className="text-4xl font-bold tracking-tight text-ink md:text-6xl">Let&rsquo;s build something useful.</h2>
         <p className="mt-5 max-w-[36rem] text-lg leading-relaxed text-muted">
-          I&rsquo;m looking for software engineering internships, especially in backend
-          systems, data engineering, ML infrastructure, or fintech. Email is the fastest
-          way to reach me.
+          I&rsquo;m looking for an entry-level software engineering role, especially on a
+          team working with backend systems, data engineering, ML infrastructure, or
+          fintech. If that sounds like your team, email is the fastest way to reach me.
         </p>
 
         <ul className="mt-10 space-y-3 text-lg">
