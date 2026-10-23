@@ -1,5 +1,7 @@
-// Update this whenever you change the entries below. A dated "now" section
-// is one of the clearest signs a real person maintains the site.
+// Not on the homepage right now; the About section's status ticker covers it.
+// Update this whenever you change the entries below.
+import { SectionHeading } from '@/components/ui'
+
 const UPDATED = 'October 2026'
 
 const ITEMS = [
@@ -22,18 +24,16 @@ const ITEMS = [
 
 export default function Currently() {
   return (
-    <section id="now" className="px-6 py-20 border-t border-line">
+    <section id="now" className="px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-10 flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="section-title">What I&rsquo;m working on now</h2>
-          <p className="text-sm text-muted">Updated {UPDATED}</p>
-        </div>
-
-        <div className="grid gap-10 md:grid-cols-3 md:gap-12">
+        <SectionHeading title="Right now" note={`Updated ${UPDATED}`} />
+        <div className="grid gap-6 md:grid-cols-3">
           {ITEMS.map(({ label, value }) => (
-            <div key={label}>
-              <h3 className="mb-2 font-semibold text-accent">{label}</h3>
-              <p className="leading-relaxed text-muted">{value}</p>
+            <div key={label} className="slab-wrap">
+              <div className="slab cut-a h-full p-7">
+                <h3 className="tag tag-gold"><span>{label}</span></h3>
+                <p className="mt-5 leading-relaxed text-fog">{value}</p>
+              </div>
             </div>
           ))}
         </div>

@@ -34,6 +34,8 @@ export interface Project {
   iconClass: string
   accentLine: string
   borderHover: string
+  // Card accent in the riot style: the hard shadow and metrics panel colour.
+  accent: string
   title: string
   objective: string
   metrics: Metric[]
@@ -56,6 +58,7 @@ export const PROJECTS: Project[] = [
     iconClass: 'text-violet-400',
     accentLine: 'linear-gradient(90deg, #a78bfa 0%, transparent 100%)',
     borderHover: 'hover:border-violet-400/40',
+    accent: '#8B5CF6',
     title: 'Quantitative Trading Framework',
     objective:
       'A modular backtesting platform with cached data pipelines and an interactive dashboard. I test momentum and mean-reversion strategies against transaction costs, out-of-sample periods, and walk-forward validation.',
@@ -127,6 +130,7 @@ export const PROJECTS: Project[] = [
     iconClass: 'text-blue-400',
     accentLine: 'linear-gradient(90deg, #3b82f6 0%, transparent 100%)',
     borderHover: 'hover:border-blue-400/40',
+    accent: '#F5A524',
     title: 'Credit Risk Scoring Engine',
     objective:
       'Engineered 176 features from 307K loan records, tuned XGBoost with Optuna and MLflow, and deployed a FastAPI service that returns a risk score with per-decision SHAP explanations.',
@@ -219,6 +223,7 @@ export const PROJECTS: Project[] = [
     iconClass: 'text-emerald-400',
     accentLine: 'linear-gradient(90deg, #10b981 0%, transparent 100%)',
     borderHover: 'hover:border-emerald-400/40',
+    accent: '#F0454B',
     title: 'Real-Time Fraud Detection',
     objective:
       'Built solo in 8 weeks for 284K transactions. Kafka streams events, Redis caches recent history, and an XGBoost model flags suspicious transactions for human review through a FastAPI service.',
@@ -229,7 +234,7 @@ export const PROJECTS: Project[] = [
       { label: 'Transactions', value: '284K' },
     ],
     stack: ['Kafka', 'Redis', 'XGBoost', 'FastAPI', 'PostgreSQL', 'Docker', 'Python'],
-    githubUrl: 'https://github.com/jellyfishing2346/fraud-detection-engine.',
+    githubUrl: 'https://github.com/jellyfishing2346/fraud-detection-engine',
     demoUrl: 'https://sparkling-brioche-94b5f2.netlify.app/dashboard.html',
     relatedPost: { slug: 'false-positives-in-fraud', title: 'The False Positive Problem in Fraud Detection' },
     story: [

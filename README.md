@@ -29,7 +29,8 @@ Featured work includes real-time fraud scoring, explainable credit-risk predicti
 
 | Page | What's on it |
 |---|---|
-| `/` | Hero, selected work, engineering focus, experience, About, writing preview, Contact |
+| `/` | Hero, selected work, how I work, experience, About, writing preview, Contact |
+| `/projects/[slug]` | Case study write-up for each project |
 | `/blog` | Writing on quant finance and ML engineering |
 | `/personal` | Horror films with category filters + IMDb links, sports, social |
 | `/404` | Custom not-found page |
@@ -52,18 +53,20 @@ Vercel                      →  Deployment
 
 ## 🎨 Design System
 
-The site uses a light editorial engineering style with a warm paper palette, teal accents, a drafting-grid texture, and restrained glass panels for grouped content.
+A bold "riot" style: a cobalt field with a darker diagonal shard and halftone dots, black and white panels with jagged edges and hard offset shadows, skewed labels and buttons, and a gold diamond as the one recurring signal. Fonts are Unbounded (display), Archivo (body) and JetBrains Mono (labels), self-hosted through Fontsource.
 
-**Background** — warm paper gradient with a subtle technical grid
-
-**Core utilities:**
+**Core classes** (in `app/globals.css`):
 ```css
-.glass        /* translucent panel with restrained border and shadow */
-.glass-hover  /* lifts panel and highlights the border on hover       */
-.gradient-text /* ink → teal → coral text treatment                    */
+.slab-wrap   /* unclipped wrapper that paints the hard drop shadow     */
+.slab/.sheet /* black / white panel; pick a silhouette with .cut-a…d   */
+.tag         /* small skewed label (.tag-gold, .tag-slab, .tag-field)  */
+.btn         /* skewed button with a jumping shadow (.btn-slab, -sm)   */
+.slash       /* off-axis section heading                               */
 ```
 
-**Animations:** reveal-on-scroll, page transitions, and subtle entrance motion
+Each project's card colour is the `accent` field in `app/projects/_data.ts`. The rotating About status lines live in `components/StatusTicker.tsx`.
+
+**Motion:** one load sequence on the hero (label slam, wordmark rise), hover lifts on the wordmark letters, and shadow jumps on cards. All of it is switched off under `prefers-reduced-motion`.
 
 ---
 
@@ -83,13 +86,14 @@ myportfolio/
 │   ├── not-found.tsx          ← custom 404
 │   └── page.tsx               ← home (all main sections)
 ├── components/
-│   ├── Navbar.tsx             ← four-link responsive navigation
+│   ├── Navbar.tsx             ← slab nav bar + full-screen mobile menu
+│   ├── ui.tsx                 ← Ransom lettering, Wordmark, SectionHeading
+│   ├── StatusTicker.tsx       ← rotating status in the About grid
 │   ├── Hero.tsx
 │   ├── Focus.tsx             ← engineering focus areas
 │   ├── About.tsx
 │   ├── Experience.tsx
 │   ├── Projects.tsx
-│   ├── Skills.tsx
 │   ├── Currently.tsx
 │   ├── Contact.tsx
 │   └── GithubIcon.tsx         ← GitHub mark

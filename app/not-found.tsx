@@ -1,47 +1,32 @@
 import Link from 'next/link'
-import Navbar from '@/components/Navbar'
 import Image from 'next/image'
-import { ArrowLeft } from 'lucide-react'
+import Navbar from '@/components/Navbar'
+import { Ransom } from '@/components/ui'
 
 export default function NotFound() {
   return (
-    <main className="relative z-10 min-h-screen flex flex-col">
+    <main className="relative z-10 flex min-h-screen flex-col">
       <Navbar />
 
-      <div className="flex-1 flex items-center justify-center px-6 pt-20">
-        <div className="relative max-w-2xl w-full text-center">
-
-          {/* Dimly lit sorrowful portrait */}
-          <div className="relative w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden">
-            <Image
-              src="/sad-signs.jpg"
-              alt="Sad Signs artwork"
-              fill
-              className="object-cover grayscale opacity-60"
-              style={{ objectPosition: '50% 10%' }}
-            />
-            <div className="absolute inset-0 rounded-full ring-1 ring-white/10" />
+      <div className="flex flex-1 items-center justify-center px-6 pb-16 pt-28">
+        <div className="max-w-2xl text-center">
+          <div className="slab-wrap mx-auto mb-10 w-44 rotate-[4deg]">
+            <div className="slab cut-b p-2">
+              <div className="duotone relative aspect-square">
+                <Image src="/sad-signs.jpg" alt="" fill sizes="176px" className="object-cover" style={{ objectPosition: '50% 10%' }} />
+              </div>
+            </div>
           </div>
 
-          <p className="mb-4 text-sm text-muted">Page not found</p>
-
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            You&apos;ve wandered somewhere<br />you shouldn&apos;t have.
+          <h1 className="-rotate-[3deg] text-[clamp(2rem,1.2rem+4vw,4rem)]">
+            <Ransom text="Wrong turn" />
           </h1>
+          <p className="mt-8 text-lg font-semibold">This page doesn&rsquo;t exist. You&rsquo;ve wandered somewhere you shouldn&rsquo;t have.</p>
+          <p className="mx-auto mt-4 max-w-md italic text-white/75">
+            &ldquo;Sorrow has twelve faces, and every single one is looking for a way out.&rdquo;
+          </p>
 
-          <blockquote className="mx-auto mb-10 max-w-lg">
-            <p className="text-slate-300 text-base italic font-light leading-relaxed mb-3">
-              &ldquo;Sorrow has twelve faces, and every single one is looking for a way out.&rdquo;
-            </p>
-          </blockquote>
-
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 rounded-md bg-ink px-6 py-3 font-medium text-paper transition-colors hover:bg-accent"
-          >
-            <ArrowLeft size={15} />
-            Back to safety
-          </Link>
+          <Link href="/" className="btn mt-10"><span>Back to the homepage</span></Link>
         </div>
       </div>
     </main>

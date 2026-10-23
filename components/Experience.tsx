@@ -1,3 +1,5 @@
+import { SectionHeading } from '@/components/ui'
+
 const EXPERIENCE = [
   {
     role: 'Full Stack Software Engineering Intern',
@@ -48,28 +50,32 @@ const EXPERIENCE = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="px-6 py-20 border-t border-line">
+    <section id="experience" className="px-4 py-20 sm:px-6 md:py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 flex flex-wrap items-baseline justify-between gap-3">
-          <h2 className="section-title">Experience</h2>
-          <p className="text-sm text-muted">Work, research, and teaching</p>
-        </div>
+        <SectionHeading title="Experience" note="Work, research, and teaching." />
 
-        <div className="space-y-12">
-          {EXPERIENCE.map(({ role, company, period, details }) => (
-            <article key={`${role}-${company}`} className="grid gap-2 md:grid-cols-[minmax(0,3fr)_minmax(0,8fr)] md:gap-16">
-              <div>
-                <p className="text-sm text-muted">{period}</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-ink">{role}</h3>
-                <p className="mb-3 text-accent">{company}</p>
-                <ul className="max-w-[40rem] list-disc space-y-2 pl-5 leading-relaxed text-muted marker:text-line-strong">
-                  {details.map((d) => <li key={d}>{d}</li>)}
-                </ul>
-              </div>
-            </article>
-          ))}
+        <div className="slab-wrap">
+          <ol className="slab cut-c divide-y divide-white/15 px-6 sm:px-10">
+            {EXPERIENCE.map(({ role, company, period, details }) => (
+              <li key={`${role}-${company}`} className="group grid gap-4 py-9 md:grid-cols-12 md:gap-10">
+                <div className="md:col-span-3">
+                  <span className="tag tag-gold"><span>{period}</span></span>
+                </div>
+                <div className="md:col-span-9">
+                  <h3 className="text-xl font-black leading-tight [font-stretch:115%] md:text-2xl">{role}</h3>
+                  <p className="mt-1 font-semibold text-[#8fb0ff]">{company}</p>
+                  <ul className="mt-4 max-w-[44rem] space-y-2.5 leading-relaxed text-fog">
+                    {details.map((d) => (
+                      <li key={d} className="relative pl-5">
+                        <span aria-hidden="true" className="absolute left-0 top-[0.6em] h-1.5 w-1.5 rotate-45 bg-white/40 transition-colors group-hover:bg-gold" />
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>

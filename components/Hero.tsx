@@ -1,55 +1,34 @@
-import Image from 'next/image'
+import { Wordmark } from '@/components/ui'
 
 export default function Hero() {
   return (
-    <section id="home" className="px-6 pt-32 pb-20 md:pt-40 md:pb-28">
-      <div className="hero-in mx-auto grid max-w-6xl items-end gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-16">
-        <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-md md:max-w-none">
-          <Image
-            src="/avatar.jpg"
-            alt="Faizan standing in front of a brick building on campus"
-            fill
-            priority
-            sizes="(min-width: 768px) 40vw, 90vw"
-            className="object-cover"
-          />
-        </div>
+    <section id="home" className="relative flex min-h-[100svh] flex-col">
+      <div className="flex flex-1 flex-col items-center justify-center px-6 pb-10 pt-28 text-center">
+        <h1 className="sr-only">Faizan Khan, computer science student and software engineer</h1>
 
-        <div>
-          <p className="mb-5 text-sm font-medium uppercase tracking-[0.16em] text-accent">
-            Software engineer · Brooklyn, NY
+        <p className="slam flex items-stretch font-display text-[clamp(1.6rem,1rem+3.2vw,3.6rem)] font-black uppercase leading-none" aria-hidden="true">
+          <span className="bg-paper px-[0.35em] py-[0.18em] text-slab shadow-[6px_6px_0_var(--slab)]">Portfolio</span>
+          <span className="bg-slab px-[0.3em] py-[0.18em] text-paper">2026</span>
+        </p>
+
+        <div className="fade-late mt-10 max-w-[38rem]">
+          <p className="text-lg font-medium leading-relaxed text-white/90 md:text-xl">
+            I&rsquo;m a computer science student at Brooklyn College building backend services,
+            data pipelines, and ML applications. I care about the part after the demo: validation,
+            failure modes, and whether someone else can reproduce the result.
           </p>
-          <h1 className="text-6xl font-bold leading-[0.95] tracking-[-0.04em] text-ink sm:text-7xl lg:text-8xl">
-            I build systems for messy, real-world data.
-          </h1>
-
-          <div className="mt-8 max-w-[34rem] space-y-4 text-lg leading-relaxed text-muted md:text-xl">
-            <p>
-              I&rsquo;m a computer science student at Brooklyn College building backend
-              services, data pipelines, and ML applications. I care about the part after
-              the demo: validation, failure modes, and whether someone else can reproduce
-              the result.
-            </p>
-            <p>
-              I&rsquo;m currently looking for an entry-level software engineering role where
-              I can work on reliable systems and learn from people who take the details seriously.
-            </p>
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-base">
-            <a
-              href="#projects"
-              className="rounded-md bg-ink px-5 py-3 font-medium text-paper transition-colors hover:bg-accent"
-            >
-              View my work
-            </a>
-            <a href="mailto:faizanakhan2003@gmail.com" className="link">Email me</a>
-            <a href="https://github.com/jellyfishing2346" className="link">GitHub</a>
-            <a href="https://linkedin.com/in/faizan-khan234" className="link">LinkedIn</a>
-            <a href="/Faizan-Khan-Resume.pdf" className="link">Résumé</a>
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
+            <a href="#projects" className="btn"><span>See my work</span></a>
+            <a href="mailto:faizanakhan2003@gmail.com" className="btn btn-slab"><span>Email me</span></a>
           </div>
         </div>
+
+        <a href="#projects" className="fade-late mt-14 p-2" aria-label="Scroll to projects">
+          <span className="diamond diamond-bob" />
+        </a>
       </div>
+
+      <Wordmark animate />
     </section>
   )
 }

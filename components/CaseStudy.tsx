@@ -4,88 +4,103 @@ import Navbar from '@/components/Navbar'
 import type { Project } from '@/app/projects/_data'
 
 export default function CaseStudy({ project }: { project: Project }) {
-  const { title, objective, metrics, stack, githubUrl, demoUrl, story, relatedPost } = project
+  const { title, badge, objective, metrics, stack, githubUrl, demoUrl, story, relatedPost, accent } = project
 
   return (
     <main className="relative z-10">
       <Navbar />
 
-      <article className="px-6 pt-32 pb-24">
+      <article className="px-4 pb-28 pt-32 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <Link href="/#projects" className="link text-sm">Back to projects</Link>
+          <Link href="/#projects" className="tag tag-slab"><span>Back to projects</span></Link>
 
-          <header className="mt-10 grid gap-10 border-b border-line pb-12 md:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] md:gap-16">
-            <div>
-              <h1 className="text-4xl font-bold leading-[1.05] tracking-[-0.025em] text-ink md:text-6xl">{title}</h1>
-              <p className="mt-6 max-w-[36rem] text-lg leading-relaxed text-muted">{objective}</p>
-              <p className="mt-4 text-sm text-muted">Built with {stack.join(', ')}</p>
-              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
-                <a href={githubUrl} className="link">Code</a>
-                {demoUrl && <a href={demoUrl} className="link">Live demo</a>}
-                {relatedPost && <Link href={`/blog/${relatedPost.slug}`} className="link">Blog post</Link>}
+          <header className="slab-wrap slab-accent mt-8" style={{ ['--accent' as string]: accent }}>
+            <div className="slab cut-a grid gap-10 p-7 sm:p-10 md:grid-cols-12 md:p-12">
+              <div className="md:col-span-7">
+                <span className="tag tag-line"><span>{badge}</span></span>
+                <h1 className="mt-5 text-[clamp(2.2rem,1.3rem+3.4vw,4rem)] font-black uppercase italic leading-[0.92] [font-stretch:120%]">
+                  {title}
+                </h1>
+                <p className="mt-6 max-w-[38rem] text-lg leading-relaxed text-fog">{objective}</p>
+                <ul className="mt-6 flex flex-wrap gap-2" aria-label="Built with">
+                  {stack.map((s) => (
+                    <li key={s} className="bg-white/[0.08] px-2.5 py-1 font-mono text-xs text-white/85">{s}</li>
+                  ))}
+                </ul>
+                <div className="mt-9 flex flex-wrap gap-4">
+                  <a href={githubUrl} className="btn btn-sm"><span>Code</span></a>
+                  {demoUrl && <a href={demoUrl} className="btn btn-sm btn-slab"><span>Live demo</span></a>}
+                  {relatedPost && <Link href={`/blog/${relatedPost.slug}`} className="btn btn-sm btn-slab"><span>Blog post</span></Link>}
+                </div>
               </div>
-            </div>
 
-            <div className="self-end">
-              <dl className="grid grid-cols-3 gap-4 md:grid-cols-1 md:gap-5">
-                {metrics.map(({ label, value }) => (
-                  <div key={label}>
-                    <dt className="text-sm text-muted">{label}</dt>
-                    <dd className="text-3xl font-semibold tabular-nums text-ink">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-              <p className="mt-5 text-sm text-muted">Measured in testing, not in live production.</p>
+              <div className="md:col-span-5 md:self-end">
+                <div className="-rotate-[1.5deg] p-6 text-slab sm:p-7" style={{ background: accent }}>
+                  <dl className="grid grid-cols-2 gap-x-5 gap-y-6">
+                    {metrics.map(({ label, value }) => (
+                      <div key={label} className="flex flex-col-reverse">
+                        <dt className="mt-2 text-[13px] font-semibold leading-snug">{label}</dt>
+                        <dd className="font-display text-[clamp(1.6rem,1.2rem+1.4vw,2.5rem)] font-black leading-none tabular-nums">{value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+                <p className="mt-4 text-right text-xs text-fog">Measured in testing, not in live production.</p>
+              </div>
             </div>
           </header>
 
-          {story ? (
-            <div className="mt-16 space-y-16">
-              {story.map(({ heading, paragraphs, image }) => (
-                <section key={heading} className="grid gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,8fr)] md:gap-16">
-                  <h2 className="text-2xl font-bold leading-tight tracking-tight text-ink">{heading}</h2>
-                  <div>
-                    <div className="max-w-[40rem] space-y-5 text-lg leading-relaxed text-muted">
-                      {paragraphs.map((p) => <p key={p.slice(0, 40)}>{p}</p>)}
-                    </div>
-                    {image && (
-                      <figure className="mt-10">
-                        <div className="overflow-hidden rounded-md border border-line">
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            width={image.width}
-                            height={image.height}
-                            sizes="(min-width: 768px) 60vw, 100vw"
-                            className="h-auto w-full"
-                          />
+          <div className="slab-wrap mt-14" style={{ ['--shadow' as string]: 'var(--slab)' }}>
+            <div className="sheet cut-c px-6 py-12 sm:px-10 md:px-14 md:py-16">
+              {story ? (
+                <div className="space-y-16">
+                  {story.map(({ heading, paragraphs, image }) => (
+                    <section key={heading} className="grid gap-6 md:grid-cols-12 md:gap-12">
+                      <h2 className="text-2xl font-black leading-tight [font-stretch:115%] md:col-span-4">{heading}</h2>
+                      <div className="md:col-span-8">
+                        <div className="max-w-[40rem] space-y-5 text-lg leading-relaxed text-slab/80">
+                          {paragraphs.map((p) => <p key={p.slice(0, 40)}>{p}</p>)}
                         </div>
-                        <figcaption className="mt-3 text-sm text-muted">{image.caption}</figcaption>
-                      </figure>
+                        {image && (
+                          <figure className="mt-10">
+                            <div className="border-2 border-slab shadow-[8px_8px_0_var(--field)]">
+                              <Image
+                                src={image.src}
+                                alt={image.alt}
+                                width={image.width}
+                                height={image.height}
+                                sizes="(min-width: 768px) 60vw, 100vw"
+                                className="h-auto w-full"
+                              />
+                            </div>
+                            <figcaption className="mt-4 text-sm text-slab/60">{image.caption}</figcaption>
+                          </figure>
+                        )}
+                      </div>
+                    </section>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid gap-6 md:grid-cols-12 md:gap-12">
+                  <h2 className="text-2xl font-black [font-stretch:115%] md:col-span-4">The full story</h2>
+                  <p className="max-w-[40rem] text-lg leading-relaxed text-slab/80 md:col-span-8">
+                    I&rsquo;m still writing this one up.
+                    {relatedPost && (
+                      <> In the meantime, <Link href={`/blog/${relatedPost.slug}`} className="link">{relatedPost.title}</Link> covers
+                      the main decisions behind it.</>
                     )}
-                  </div>
-                </section>
-              ))}
-            </div>
-          ) : (
-            <div className="mt-16 grid gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,8fr)] md:gap-16">
-              <h2 className="text-2xl font-bold tracking-tight text-ink">The full story</h2>
-              <p className="max-w-[40rem] text-lg leading-relaxed text-muted">
-                I&rsquo;m still writing this one up.
-                {relatedPost && (
-                  <> In the meantime, <Link href={`/blog/${relatedPost.slug}`} className="link">{relatedPost.title}</Link> covers
-                  the main decisions behind it.</>
-                )}
-              </p>
-            </div>
-          )}
+                  </p>
+                </div>
+              )}
 
-          {story && relatedPost && (
-            <p className="mt-20 border-t border-line pt-10 text-lg text-muted">
-              I wrote more about this in{' '}
-              <Link href={`/blog/${relatedPost.slug}`} className="link">{relatedPost.title}</Link>.
-            </p>
-          )}
+              {story && relatedPost && (
+                <p className="mt-16 border-t-2 border-slab pt-8 text-lg text-slab/80">
+                  I wrote more about this in{' '}
+                  <Link href={`/blog/${relatedPost.slug}`} className="link text-slab">{relatedPost.title}</Link>.
+                </p>
+              )}
+            </div>
+          </div>
         </div>
       </article>
     </main>

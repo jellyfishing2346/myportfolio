@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import { SectionHeading } from '@/components/ui'
 import { POSTS } from './data'
 
 export const metadata = {
@@ -12,24 +13,27 @@ export default function Blog() {
     <main className="relative z-10">
       <Navbar />
 
-      <section className="px-6 pt-36 pb-24">
+      <section className="px-4 pb-28 pt-36 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <h1 className="text-5xl font-bold leading-[1.02] tracking-[-0.03em] text-ink md:text-7xl">Writing</h1>
-          <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-muted">
-            Short posts on quantitative finance, ML engineering, and the things I run into while
-            building. No tutorials, no hot takes. Just what I actually learned.
-          </p>
+          <SectionHeading
+            as="h1"
+            title="Writing"
+            note="Short posts on quantitative finance, ML engineering, and the things I run into while building. No tutorials, no hot takes. Just what I actually learned."
+          />
 
-          <ul className="mt-14 divide-y divide-line border-y border-line">
-            {POSTS.map(({ slug, title, date, readTime, summary, tag }) => (
-              <li key={slug} className="grid gap-2 py-8 md:grid-cols-[minmax(0,3fr)_minmax(0,8fr)] md:gap-16">
-                <p className="text-sm text-muted">{date}, {readTime}<br className="hidden md:block" /><span className="md:hidden">, </span>{tag}</p>
-                <div>
-                  <Link href={`/blog/${slug}`} className="text-2xl font-semibold tracking-tight text-ink transition-colors hover:text-accent">
-                    {title}
-                  </Link>
-                  <p className="mt-2 max-w-[40rem] leading-relaxed text-muted">{summary}</p>
-                </div>
+          <ul className="space-y-8">
+            {POSTS.map(({ slug, title, date, readTime, summary, tag }, i) => (
+              <li key={slug} className={`slab-wrap slab-hover ${i % 2 ? 'md:rotate-[0.4deg]' : 'md:-rotate-[0.4deg]'}`}>
+                <Link href={`/blog/${slug}`} className={`slab ${i % 2 ? 'cut-b' : 'cut-a'} group grid gap-4 p-7 md:grid-cols-12 md:gap-10 md:p-9`}>
+                  <div className="flex flex-wrap items-start gap-2 md:col-span-3 md:flex-col">
+                    <span className="tag tag-gold"><span>{tag}</span></span>
+                    <span className="font-mono text-xs font-bold text-fog">{date}, {readTime}</span>
+                  </div>
+                  <div className="md:col-span-9">
+                    <h2 className="text-2xl font-black leading-tight [font-stretch:115%] group-hover:text-gold md:text-3xl">{title}</h2>
+                    <p className="mt-3 max-w-[44rem] leading-relaxed text-fog">{summary}</p>
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>
