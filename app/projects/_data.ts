@@ -234,7 +234,7 @@ export const PROJECTS: Project[] = [
       { label: 'Transactions', value: '284K' },
     ],
     stack: ['Kafka', 'Redis', 'XGBoost', 'FastAPI', 'PostgreSQL', 'Docker', 'Python'],
-    githubUrl: 'https://github.com/jellyfishing2346/fraud-detection-engine',
+    githubUrl: 'https://github.com/jellyfishing2346/fraud-detection-engine.',
     demoUrl: 'https://sparkling-brioche-94b5f2.netlify.app/dashboard.html',
     relatedPost: { slug: 'false-positives-in-fraud', title: 'The False Positive Problem in Fraud Detection' },
     story: [
