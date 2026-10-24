@@ -90,9 +90,9 @@ export default function About() {
                   them as notes in a notebook.
                 </p>
                 <p>
-                  Most of my week is split between research, teaching, and building. At Brooklyn
-                  College I work on turning firefighter incident reports into data people can
-                  actually query. As a teaching assistant, I help students in cybersecurity, web development,
+                  Most of my week is split between research, teaching, and building. At Brooklyn College I build Python ETL and ML workflows that pull
+                  structured data out of long curriculum documents, like the 450+ page ACM/IEEE
+                  CS2023 report. As a teaching assistant, I help students in cybersecurity, web development,
                   AI, and data science understand both the
                   code and the reason behind it.
                 </p>
