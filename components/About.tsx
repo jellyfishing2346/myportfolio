@@ -16,7 +16,7 @@ const TOOLBOX = [
 const SOCIALS = [
   { href: 'https://github.com/jellyfishing2346', label: 'GitHub', Icon: GithubIcon },
   { href: 'https://linkedin.com/in/faizan-khan234', label: 'LinkedIn', Icon: Linkedin },
-  { href: 'mailto:faizanakhan2003@gmail.com', label: 'Email', Icon: Mail },
+  { href: 'mailto:faizan.khan.intern02@gmail.com', label: 'Email', Icon: Mail },
   { href: '/Faizan-Khan-Resume.pdf', label: 'Résumé', Icon: FileText },
 ]
 

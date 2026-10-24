@@ -6,9 +6,9 @@ export default function Hero() {
       <div className="flex flex-1 flex-col items-center justify-center px-6 pb-10 pt-28 text-center">
         <h1 className="sr-only">Faizan Khan, computer science student and software engineer</h1>
 
-        <p className="slam flex items-stretch font-display text-[clamp(1.6rem,1rem+3.2vw,3.6rem)] font-black uppercase leading-none" aria-hidden="true">
-          <span className="bg-paper px-[0.35em] py-[0.18em] text-slab shadow-[6px_6px_0_var(--slab)]">Portfolio</span>
-          <span className="bg-slab px-[0.3em] py-[0.18em] text-paper">2026</span>
+        <p className="slam flex flex-col items-start font-display sm:flex-row sm:items-stretch text-[clamp(1.6rem,1rem+3.2vw,3.6rem)] font-black uppercase leading-none" aria-hidden="true">
+          <span className="bg-paper px-[0.35em] py-[0.18em] text-slab shadow-[6px_6px_0_var(--slab)]">Software</span>
+          <span className="ml-[1.4em] bg-slab px-[0.3em] py-[0.18em] text-paper sm:ml-0">Engineer</span>
         </p>
 
         <div className="fade-late mt-10 max-w-[38rem]">
@@ -19,7 +19,7 @@ export default function Hero() {
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
             <a href="#projects" className="btn"><span>See my work</span></a>
-            <a href="mailto:faizanakhan2003@gmail.com" className="btn btn-slab"><span>Email me</span></a>
+            <a href="mailto:faizan.khan.intern02@gmail.com" className="btn btn-slab"><span>Email me</span></a>
           </div>
         </div>
 

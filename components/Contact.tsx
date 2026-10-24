@@ -21,10 +21,10 @@ export default function Contact() {
         </p>
 
         <a
-          href="mailto:faizanakhan2003@gmail.com"
+          href="mailto:faizan.khan.intern02@gmail.com"
           className="mt-10 -rotate-[2deg] bg-paper px-5 py-3 font-display text-[clamp(1rem,0.7rem+1.6vw,1.9rem)] font-extrabold text-slab shadow-[8px_8px_0_var(--slab)] transition-all hover:-translate-x-1 hover:-translate-y-1 hover:bg-gold hover:shadow-[12px_12px_0_var(--slab)]"
         >
-          faizanakhan2003@gmail.com
+          faizan.khan.intern02@gmail.com
         </a>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">

@@ -59,7 +59,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
               <footer className="mt-14 flex flex-wrap items-center justify-between gap-5 border-t-2 border-slab pt-8">
                 <Link href="/blog" className="link">All posts</Link>
-                <a href="mailto:faizanakhan2003@gmail.com" className="btn btn-sm btn-slab"><span>Email me about this post</span></a>
+                <a href="mailto:faizan.khan.intern02@gmail.com" className="btn btn-sm btn-slab"><span>Email me about this post</span></a>
               </footer>
             </div>
           </div>
