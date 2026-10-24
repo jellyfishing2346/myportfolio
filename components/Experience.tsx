@@ -1,6 +1,26 @@
 import { SectionHeading } from '@/components/ui'
 
-const EXPERIENCE = [
+type Entry = {
+  role: string
+  company: string
+  period: string
+  details: string[]
+  link?: { href: string; label: string }
+}
+
+const EXPERIENCE: Entry[] = [
+  {
+    role: 'Sole Developer, Website Rebuild',
+    company: 'Project Alpaca (NYC nonprofit)',
+    period: 'Sep – Oct 2026',
+    link: { href: 'https://project-alpaca.pages.dev', label: 'Visit the site' },
+    details: [
+      'Built the nonprofit’s new website from scratch as the only developer, using React and Vite, matched to Studio Haven’s Figma designs and tested on screens from 320px to 1920px wide.',
+      'Connected Sanity CMS to Cloudflare Pages with a publish webhook, so staff update events, news, and team pages without code and the site rebuilds in about a minute.',
+      'Built the Alpacee Directory, a searchable, filterable directory of program graduates for mentors and recruiters, read live from the program’s Google Sheet.',
+      'Added a nightly GitHub Action that snapshots published content into the repo, plus a build fallback so the site still deploys if the CMS is unreachable.',
+    ],
+  },
   {
     role: 'Full Stack Software Engineering Intern',
     company: 'InZone Inc.',
@@ -56,7 +76,7 @@ export default function Experience() {
 
         <div className="slab-wrap">
           <ol className="slab cut-c divide-y divide-white/15 px-6 sm:px-10">
-            {EXPERIENCE.map(({ role, company, period, details }) => (
+            {EXPERIENCE.map(({ role, company, period, details, link }) => (
               <li key={`${role}-${company}`} className="group grid gap-4 py-9 md:grid-cols-12 md:gap-10">
                 <div className="md:col-span-3">
                   <span className="tag tag-gold"><span>{period}</span></span>
@@ -64,6 +84,9 @@ export default function Experience() {
                 <div className="md:col-span-9">
                   <h3 className="text-xl font-black leading-tight [font-stretch:115%] md:text-2xl">{role}</h3>
                   <p className="mt-1 font-semibold text-[#8fb0ff]">{company}</p>
+                  {link && (
+                    <a href={link.href} className="tag tag-line mt-3"><span>{link.label} ↗</span></a>
+                  )}
                   <ul className="mt-4 max-w-[44rem] space-y-2.5 leading-relaxed text-fog">
                     {details.map((d) => (
                       <li key={d} className="relative pl-5">
